@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Cambridge Architecture",
+    "description": "B&W photos from the Inman and Central Sq. areas in Cambridge, MA.",
+    "coverImageURL": "../images/photos/series/cambridge/green_st.jpg",
+    "slug": "cambridge-architecture",
+    "images": [
+      {
+        "title": "Bus Stop",
+        "description": "People need to get picked up.",
+        "URL": "../images/photos/series/cambridge/bus_stop.jpg"
+      },
+      {
+        "title": "Green St.",
+        "description": "Concrete stretching upwards.",
+        "URL": "../images/photos/series/cambridge/green_st.jpg"
+      },
+      {
+        "title": "Ivy",
+        "description": "Ivy crawling on a chain link fence.",
+        "URL": "../images/photos/series/cambridge/fence.jpg"
+      },
+      {
+        "title": "Tech Sq.",
+        "description": "Abstract architectural photograph from Tech Sq.",
+        "URL": "../images/photos/series/cambridge/tech_square.jpg"
+      }
+    ]
+  }
+]
