@@ -20,9 +20,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Link onClick={() => toggleTheme('something')} to="/about/">About</Link>
+      {/* <Link onClick={() => toggleTheme('something')} to="/about/">About</Link>
       <Link to="/software/">Software</Link>
-      <Link to="/photography/">Photography</Link>
+      <Link to="/photography/">Photography</Link> */}
     </Layout>
   )
 

@@ -1,7 +1,17 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 export const FooterWrapper = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
+    color: ${props => props.theme.iconColor};
+`
+
+export const IconContainer = styled.div`    
+    
+`
+
+export const IconAnimateContainer = styled(motion.div)`
+    cursor: pointer;
+    margin: auto; 
 `

@@ -19,7 +19,7 @@ const PhotographyPage = () => {
           slug,
           coverImageURL {
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

@@ -1,16 +1,51 @@
 import React from "react"
-import {FooterWrapper} from '../styles/footer-styles'
+import Github from "../images/svg/icons/github.svg"
+import Gmail from "../images/svg/icons/gmail.svg"
+import Instagram from "../images/svg/icons/instagram.svg"
+import LinkedIn from "../images/svg/icons/linkedin.svg"
+import {
+  FooterWrapper,
+  IconContainer,
+  IconAnimateContainer,
+} from "../styles/footer-styles"
+import { Link } from "gatsby"
 
 const Footer = () => {
-
   return (
     <footer>
-        <FooterWrapper>
-            © {new Date().getFullYear()}
-        </FooterWrapper>
+      <FooterWrapper>
+        <IconAnimateContainer
+          whileHover={{ scale: 1.2, rotate: 10 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+          <a href="https://github.com/loewj" target="_blank"><Github height="30" /></a>
+        </IconAnimateContainer>
+        <IconAnimateContainer
+          whileHover={{ scale: 1.2, rotate: -10 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+          <a href="mailto:loewjc@gmail.com" target="_blank"><Gmail height="30" /></a>
+        </IconAnimateContainer>
+        <IconAnimateContainer
+          whileHover={{ scale: 1.2, rotate: 10 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+          <a href="https://www.instagram.com/joshualoew/?hl=en" target="_blank"><Instagram height="30" /></a>
+        </IconAnimateContainer>
+        <IconAnimateContainer
+          whileHover={{ scale: 1.2, rotate: -10 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+          <a href="https://www.linkedin.com/in/joshua-loew-358258110/" target="_blank"><LinkedIn height="30" /></a>
+        </IconAnimateContainer>
+        {/* <div>© {new Date().getFullYear()}</div> */}
+      </FooterWrapper>
     </footer>
   )
-
 }
 
 export default Footer

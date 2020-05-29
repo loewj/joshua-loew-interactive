@@ -5,11 +5,17 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 
 import { ThemeProvider } from "styled-components"
-import {GlobalStyle} from '../styles/global-styles'
-import {Container, Content, SVGContainer} from '../styles/layout-styles'
+import {
+  Container,
+  Content,
+  SVGContainer,
+  ChildContainer,
+  Main,
+} from "../styles/layout-styles"
 
 // import Logo from "../images/svg/logo/jl_logo.svg";
 import Footer from "./footer"
+import { GlobalStyle } from "../styles/global-styles"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,11 +29,12 @@ const Layout = ({ children }) => {
   `)
 
   const blueTheme = {
-    
-  }
-
-  const rectStyle = {
-    fill: "#304ffe",
+    primaryRectColor: "#304ffe",
+    secondaryRectColor: "#7a7cff",
+    primaryTextColor: "#ffffff",
+    secondaryTextColor: "#0026ca",
+    iconColor: "#000000",
+    backgroundColor: "#ffffff",
   }
 
   return (
@@ -35,9 +42,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Container>
         <Content>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main>
-            {children}
+          <Main>
             {/* <Logo height="50" /> */}
             <SVGContainer>
               <svg
@@ -50,19 +55,18 @@ const Layout = ({ children }) => {
                 height="100%"
                 preserveAspectRatio="none"
               >
-                <rect
-                  width="100%"
-                  height="100%"
-                  rx="3"
-                  ry="3"
-                  style={rectStyle}
-                />
+                <rect width="100%" height="100%" rx="3" ry="3" />
               </svg>
             </SVGContainer>
-          </main>
+            <ChildContainer>
+              <Header siteTitle={data.site.siteMetadata.title} />
+              {children}
+            </ChildContainer>
+          </Main>
         </Content>
-        <Footer />
+        
       </Container>
+      <Footer />
     </ThemeProvider>
   )
 }
