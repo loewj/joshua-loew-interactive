@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { useGlobalStateContext } from "../context/global-context"
 
 import Header from "./header"
 
@@ -32,13 +33,48 @@ const Layout = ({ children }) => {
     primaryRectColor: "#304ffe",
     secondaryRectColor: "#7a7cff",
     primaryTextColor: "#ffffff",
+    clickableColor: "#7a7cff",
     secondaryTextColor: "#0026ca",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
 
+  const blackTheme = {
+    primaryRectColor: "#212121",
+    secondaryRectColor: "#484848",
+    primaryTextColor: "#ffffff",
+    clickableColor: "#484848",
+    secondaryTextColor: "#000000",
+    iconColor: "#000000",
+    backgroundColor: "#ffffff",
+  }
+
+  const greenTheme = {
+    primaryRectColor: "#00c853",
+    secondaryRectColor: "#5efc82",
+    primaryTextColor: "#000000",
+    clickableColor: "#5efc82",
+    secondaryTextColor: "#009624",
+    iconColor: "#000000",
+    backgroundColor: "#ffffff",
+  }
+
+  const { currentTheme } = useGlobalStateContext()
+
+  let theme = blueTheme
+  switch (currentTheme) {
+    case "photo":
+      theme = blackTheme
+      break
+    case "software":
+      theme = greenTheme
+      break
+    default:
+      break
+  }
+
   return (
-    <ThemeProvider theme={blueTheme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Container>
         <Content>
@@ -64,7 +100,6 @@ const Layout = ({ children }) => {
             </ChildContainer>
           </Main>
         </Content>
-        
       </Container>
       <Footer />
     </ThemeProvider>

@@ -14,8 +14,6 @@ const Header = ({ siteTitle }) => {
   // access the global state context to change the theme of our app (eg when the user changes pages)
   const { currentTheme } = useGlobalStateContext()
 
-  console.log(siteTitle)
-
   return (
     <HeaderWrapper>
       <MenuIcon>
@@ -33,7 +31,7 @@ const Header = ({ siteTitle }) => {
           <rect width="30" height="30" rx="5" />
         </motion.svg>
       </MenuIcon>
-      <NavHeader>hello</NavHeader>
+      <NavHeader>{currentTheme}</NavHeader>
       <BookEnd />
     </HeaderWrapper>
   )

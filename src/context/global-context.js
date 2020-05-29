@@ -21,10 +21,18 @@ export const GlobalProvider = ({children}) => {
 
     // set the default state here... useful for when user manually navigates to page
     const path = window.location.pathname;
-    console.log(path);
+    let theme = '';
+
+    if (path.search("about") !== -1) {
+        theme = "about";
+    } else if (path.search("software") !== -1) {
+        theme = "software";
+    } else if (path.search("photography") !== -1) {
+        theme = "photo";
+    }
 
     const [state, dispatch] = useReducer(globalReducer, {
-        currentTheme: "blue"
+        currentTheme: theme
     })
 
     return  (

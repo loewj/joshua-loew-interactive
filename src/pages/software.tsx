@@ -41,7 +41,6 @@ const SoftwarePage = () => {
         )
 
       })}
-      <Link to="/">Back</Link>
     </Layout>
   )
 

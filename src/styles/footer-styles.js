@@ -7,10 +7,6 @@ export const FooterWrapper = styled.div`
     color: ${props => props.theme.iconColor};
 `
 
-export const IconContainer = styled.div`    
-    
-`
-
 export const IconAnimateContainer = styled(motion.div)`
     cursor: pointer;
     margin: auto; 

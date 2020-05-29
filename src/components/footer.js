@@ -5,10 +5,8 @@ import Instagram from "../images/svg/icons/instagram.svg"
 import LinkedIn from "../images/svg/icons/linkedin.svg"
 import {
   FooterWrapper,
-  IconContainer,
   IconAnimateContainer,
 } from "../styles/footer-styles"
-import { Link } from "gatsby"
 
 const Footer = () => {
   return (
@@ -19,28 +17,28 @@ const Footer = () => {
           onHoverStart={e => {}}
           onHoverEnd={e => {}}
         >
-          <a href="https://github.com/loewj" target="_blank"><Github height="30" /></a>
+          <a href="https://github.com/loewj" target="_blank" rel="noreferrer"><Github height="30" /></a>
         </IconAnimateContainer>
         <IconAnimateContainer
           whileHover={{ scale: 1.2, rotate: -10 }}
           onHoverStart={e => {}}
           onHoverEnd={e => {}}
         >
-          <a href="mailto:loewjc@gmail.com" target="_blank"><Gmail height="30" /></a>
+          <a href="mailto:loewjc@gmail.com" target="_blank" rel="noreferrer"><Gmail height="30" /></a>
         </IconAnimateContainer>
         <IconAnimateContainer
           whileHover={{ scale: 1.2, rotate: 10 }}
           onHoverStart={e => {}}
           onHoverEnd={e => {}}
         >
-          <a href="https://www.instagram.com/joshualoew/?hl=en" target="_blank"><Instagram height="30" /></a>
+          <a href="https://www.instagram.com/joshualoew/" target="_blank" rel="noreferrer"><Instagram height="30" /></a>
         </IconAnimateContainer>
         <IconAnimateContainer
           whileHover={{ scale: 1.2, rotate: -10 }}
           onHoverStart={e => {}}
           onHoverEnd={e => {}}
         >
-          <a href="https://www.linkedin.com/in/joshua-loew-358258110/" target="_blank"><LinkedIn height="30" /></a>
+          <a href="https://www.linkedin.com/in/joshua-loew-358258110/" target="_blank" rel="noreferrer"><LinkedIn height="30" /></a>
         </IconAnimateContainer>
         {/* <div>© {new Date().getFullYear()}</div> */}
       </FooterWrapper>
