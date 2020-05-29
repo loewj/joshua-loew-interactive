@@ -27,7 +27,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     series.forEach(({node: {slug}}) => {
         actions.createPage({
-            path: `/${slug}/`,
+            path: `/photography/${slug}/`,
             component: require.resolve('./src/templates/series.js'),
             context: {slug}
         });

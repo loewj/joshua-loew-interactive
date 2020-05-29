@@ -7,7 +7,7 @@ const PhotographySeriesView = ({title, description, coverImage, slug}) => (
         <h1>{title}</h1>
         <p>{description}</p>
         <Image fluid={coverImage} alt={title} />
-        <Link to={`/${slug}/`}>View</Link>
+        <Link to={`/photography/${slug}/`}>View</Link>
     </div>
 )
 
