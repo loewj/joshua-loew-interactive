@@ -3,9 +3,13 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import layoutStyles from "./layout.module.scss"
 
-import Logo from "../images/svg/logo/jl_logo.svg";
+import { ThemeProvider } from "styled-components"
+import {GlobalStyle} from '../styles/global-styles'
+import {Container, Content, SVGContainer} from '../styles/layout-styles'
+
+// import Logo from "../images/svg/logo/jl_logo.svg";
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,19 +22,24 @@ const Layout = ({ children }) => {
     }
   `)
 
-    const rectStyle = {
-      fill: "#304ffe",
-    }
+  const blueTheme = {
+    
+  }
+
+  const rectStyle = {
+    fill: "#304ffe",
+  }
 
   return (
-    <React.Fragment>
-      <div className={layoutStyles.container}>
-        <div className={layoutStyles.content}>
+    <ThemeProvider theme={blueTheme}>
+      <GlobalStyle />
+      <Container>
+        <Content>
           <Header siteTitle={data.site.siteMetadata.title} />
           <main>
             {children}
-            <Logo height="50" />
-            <div className={layoutStyles.svg}>
+            {/* <Logo height="50" /> */}
+            <SVGContainer>
               <svg
                 id="svgId"
                 xmlns="http://www.w3.org/2000/svg"
@@ -41,14 +50,20 @@ const Layout = ({ children }) => {
                 height="100%"
                 preserveAspectRatio="none"
               >
-                <rect width="100%" height="100%" rx="3" ry="3" style={rectStyle} />
+                <rect
+                  width="100%"
+                  height="100%"
+                  rx="3"
+                  ry="3"
+                  style={rectStyle}
+                />
               </svg>
-            </div>
+            </SVGContainer>
           </main>
-        </div>
-        <footer>© {new Date().getFullYear()}</footer>
-      </div>
-    </React.Fragment>
+        </Content>
+        <Footer />
+      </Container>
+    </ThemeProvider>
   )
 }
 
