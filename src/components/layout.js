@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
 
   const { currentTheme } = useGlobalStateContext()
 
-  let theme = blueTheme
+  let theme;
   switch (currentTheme) {
     case "photo":
       theme = blackTheme
@@ -70,8 +70,11 @@ const Layout = ({ children }) => {
       theme = greenTheme
       break
     default:
+      theme = blueTheme
       break
   }
+
+  console.log(theme);
 
   return (
     <ThemeProvider theme={theme}>

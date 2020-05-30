@@ -24,7 +24,7 @@ const SoftwarePage = () => {
 
   return (
     <Layout>
-      <SEO title="Photography" />
+      <SEO title="Software" />
       {softwareProjects.map(({node: project}, index) => {
 
         const title = project.title;

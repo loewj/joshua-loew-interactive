@@ -1,7 +1,58 @@
 [
     {
+        "title": "Willie's Superbrew",
+        "description": "Willie's Superbrew has a list of retail locations (bars and restaurants) where their product is sold. However, the address isn't sufficient to sustainably calculate distance between the consumer and nearby locations. To remedy this, I was hired to build a backend admin portal to geocode retail locations from a Google Sheet. The backend features API routes to return availability information to customers via ManyChat (a FaceBook messenger bot client). Finally, I built an Angular app that displays an interactive map and deployed it on the company's SquareSpace site.",
+        "launchURL": "https://superbrew.com/locations-near-you",
+        "tech": [
+            "Node.js",
+            "MongoDB",
+            "Angular",
+            "Google Cloud Platform"
+        ],
+        "where": "Freelance",
+        "when": "2/2020 – Present"
+    },
+    {
+        "title": "oneZero Financial Systems",
+        "description": "At OZFS, I was tasked with building a scheduled reporting system within a larger application that aggregates trade volume from their proprietary foreign exchange hub. These reports are run nightly against roll-up tables that are calculated at the end of a trade day via Symfony commands, a job scheduler, and a process control system. The reporting functionality is now used for billing at OZFS.",
+        "launchURL": "",
+        "tech": [
+            "Symfony",
+            "Twig",
+            "MySQL",
+            "PostgreSQL",
+            "Node.js",
+            "Supervisor",
+            "cron"
+        ],
+        "where": "Setfive Consulting",
+        "when": "3/2017 – 8/2020"
+    },
+    {
+        "title": "My ACP Decisions",
+        "description": "My ACP Decisions is a full-stack web application that allows hospice clinicians to curate and distribute informational video playlists for patients. As the core developer of the API and front end written in Angular, I was responsible for feature design, implementation, and documentation. The API is also consumed by as iOS and Android applications written and maintained by other engineering teams. The application integrates with several third party services to create scheduled cloud backups, collect user survey data, and more.",
+        "launchURL": "",
+        "tech": [
+            "Symfony",
+            "MySQL",
+            "Angular",
+            "cron",
+            "AWS"
+        ],
+        "when": "3/2017 – 8/2020"
+    },
+    {
         "title": "JointDJ",
-        "description": "Something about the project.",
-        "launchURL": "https://jointdj.com/"
+        "description": "JointDJ is a jukebox for the 21st century. It's a free web app that allows users to create an event with a unique code (think of an event as a jukebox and the code as your ticket to ride). Each event needs a place to be displayed. Be it a TV, Chromecast, Roku, whatever. The event player is displayed on the TV with the unique event code printed on the bottom-right of the player. With that code, others can join, add songs, and control a shared playlist. The playlist queues and plays music videos from the YouTube API.",
+        "launchURL": "https://jointdj.com/",
+        "tech": [
+            "Symfony",
+            "MySQL",
+            "AngularJS",
+            "Ionic",
+            "AWS"
+        ],
+        "where":"Setfive Consulting",
+        "when": "2/2017 – 3/2017"
     }
 ]

@@ -17,7 +17,6 @@ const Header = ({ siteTitle }) => {
   return (
     <HeaderWrapper>
       <MenuIcon>
-        {console.log(currentTheme)}
         <motion.svg
           whileHover={{ scale: 1.5, rotate: 90 }}
           onHoverStart={e => {}}
