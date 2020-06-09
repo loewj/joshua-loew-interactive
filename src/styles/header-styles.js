@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 export const HeaderWrapper = styled.header`
   width: 100%;
@@ -9,11 +10,24 @@ export const HeaderWrapper = styled.header`
 
 export const MenuIcon = styled.div`
   width: 20%;
-  padding-left: 1rem;
-  svg {
+  /* padding-left: 1rem; */
+  .menu-open, .menu-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    color: ${props => props.theme.secondaryRectColor};
+    fill: ${props => props.theme.secondaryRectColor};
     cursor: pointer;
   }
-  fill: ${props => props.theme.secondaryRectColor};
+  .menu-open {
+    background-color: ${props => props.theme.secondaryRectColor};
+  }
+`
+
+export const CloseContainer = styled(motion.div)`
+  /* cursor: pointer;
+  .menu-close { */
+  }
 `
 
 export const NavHeader = styled.h1`

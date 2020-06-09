@@ -1,58 +1,166 @@
-import React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
+import React, { useState } from "react"
+import Masonry from "react-masonry-component"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 import PhotographySeriesView from "../components/photography-series-view"
+import { ButtonContainer, PhotoCaption } from "../styles/photography-styles"
 
-const PhotographyPage = () => {
+import { SRLWrapper } from "simple-react-lightbox"
 
-  const data = useStaticQuery(graphql`
-  {
-    allPhotographySeriesJson {
-      edges {
-        node {
-          title,
-          description,
-          slug,
-          coverImageURL {
-            childImageSharp {
-              fluid(quality: 100) {
-                ...GatsbyImageSharpFluid
+const PhotographyPage = ({location}) => {
+  const photoData = useStaticQuery(graphql`
+    {
+      allPhotographySeriesJson {
+        edges {
+          node {
+            title
+            description
+            slug
+            coverImageURL {
+              childImageSharp {
+                fluid(quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+      allLandscapePhotosJson {
+        edges {
+          node {
+            title
+            description
+            format
+            imageURL {
+              childImageSharp {
+                fluid(quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+              childImageSharp {
+                fixed(width: 200, quality: 100) {
+                  ...GatsbyImageSharpFixed
+                }
               }
             }
           }
         }
       }
     }
-  }
   `)
 
-  const photoSeries = data.allPhotographySeriesJson.edges;
+  const photoSeries = photoData.allPhotographySeriesJson.edges
+  const landscapePhotos = photoData.allLandscapePhotosJson.edges
+
+  const viewing = location.state.fromSeries ? "SERIES" : "LANDSCAPE"
+  const [selectedGallery, selectGallery] = useState(viewing)
+
+  const masonryOptions = {
+    transitionDuration: 0,
+  }
+
+  const options = {
+    settings: {
+      overlayColor: "rgb(0, 0, 0)",
+      autoplaySpeed: 7000,
+      transitionSpeed: 1000,
+    },
+    caption: {
+      captionFontWeight: "300",
+    },
+    buttons: {
+      showDownloadButton: false,
+      showThumbnailsButton: false,
+      showFullscreenButton: false,
+    },
+    thumbnails: {
+      showThumbnails: false,
+    },
+  }
+
+  const childElements = landscapePhotos.map(({ node: landscape }, index) => {
+    const title = landscape.title
+    const imageURL = landscape.imageURL.childImageSharp.fluid
+    const thumbURL = landscape.imageURL.childImageSharp.fixed
+
+    return (
+      <a key={index} href={imageURL.src} data-attribute="SRL">
+        <img src={thumbURL.src} alt={title} />
+      </a>
+    )
+  })
+
+  const customCaptions = landscapePhotos.map(({ node: landscape }, index) => {
+    const caption = (
+      <PhotoCaption className="SRLCustomCaption">
+        <p className="title">
+          <span>{landscape.title}</span> | {landscape.format}
+        </p>
+        <p>{landscape.description}</p>
+      </PhotoCaption>
+    )
+    return { id: index, caption: caption }
+  })
 
   return (
     <Layout>
       <SEO title="Photogrphy" />
-      <h1>Photography</h1>
-      {photoSeries.map(({node: series}, index) => {
 
-        const title = series.title;
-        const description = series.description;
-        const coverImageURL = series.coverImageURL.childImageSharp.fluid
-        const slug = series.slug
+      <ButtonContainer>
+        <button
+          className={
+            "btn " + (selectedGallery === "LANDSCAPE" ? "active" : "inactive")
+          }
+          onClick={() => selectGallery("LANDSCAPE")}
+        >
+          Landscapes
+        </button>
+        <button
+          className={
+            "btn " + (selectedGallery === "SERIES" ? "active" : "inactive")
+          }
+          onClick={() => selectGallery("SERIES")}
+        >
+          Series
+        </button>
+      </ButtonContainer>
 
-        return (
-          <PhotographySeriesView
-            key={index}
-            title={title}
-            description={description}
-            coverImage={coverImageURL}
-            slug={slug}
-          ></PhotographySeriesView>
-        )
+      {selectedGallery === "LANDSCAPE" && (
+        <SRLWrapper options={options} customCaptions={customCaptions}>
+          <Masonry
+            data-attribute="SRL"
+            className={"my-gallery-class"} // default ''
+            elementType={"ul"} // default 'div'
+            options={masonryOptions} // default {}
+            disableImagesLoaded={false} // default false
+            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+          >
+            {childElements}
+          </Masonry>
+        </SRLWrapper>
+      )}
 
-      })}
+      {selectedGallery === "SERIES" &&
+        photoSeries.map(({ node: series }, index) => {
+          const title = series.title
+          const description = series.description
+          const coverImageURL = series.coverImageURL.childImageSharp.fluid
+          const slug = series.slug
+
+          return (
+            <PhotographySeriesView
+              key={index}
+              title={title}
+              description={description}
+              slug={slug}
+            ></PhotographySeriesView>
+          )
+        })}
     </Layout>
   )
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Gibdo",
+    "description": "Shot on Fuji Velvia 50 at Brewster Flats on Cape Cod.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/brewster_flats_swimmers.jpg"
+  },
+  {
+    "title": "Now Playing!",
+    "description": "Shot Kodak Portra 160 in Providence, RI.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/ppac.jpg"
+  },
+  {
+    "title": "Elegy of Emptiness",
+    "description": "Shot Kodak Fuji Provia 100F in the dunes of Sandwich, MA.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/sandy_neck_dunes.jpg"
+  },
+  {
+    "title": "Magnanimous",
+    "description": "Shot on Fuji Velvia 50 at dawn on Cape Cod.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/sandy_neck_tree_silhouette.jpg"
+  },
+  {
+    "title": "Uprising",
+    "description": "Shot on Kodak Ektar 100 in Los Nevados National Natural Park, Colombia.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/uprising.jpg"
+  }
+]

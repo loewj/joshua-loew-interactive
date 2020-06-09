@@ -8,8 +8,6 @@
 import "./src/styles/global.scss"
 import React from "react"
 import { GlobalProvider } from "./src/context/global-context"
-import {globalHistory} from '@reach/router';
-
 
 export const wrapRootElement = ({ element }) => {
   return <GlobalProvider>{element}</GlobalProvider>

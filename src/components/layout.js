@@ -1,9 +1,10 @@
-import React from "react"
+import React, {useState} from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 import { useGlobalStateContext } from "../context/global-context"
 
 import Header from "./header"
+// import { motion } from "framer-motion"
 
 import { ThemeProvider } from "styled-components"
 import {
@@ -16,18 +17,11 @@ import {
 
 // import Logo from "../images/svg/logo/jl_logo.svg";
 import Footer from "./footer"
+import NavItems from "./nav-items"
 import { GlobalStyle } from "../styles/global-styles"
+import SimpleReactLightbox from "simple-react-lightbox";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   const blueTheme = {
     primaryRectColor: "#304ffe",
@@ -44,7 +38,7 @@ const Layout = ({ children }) => {
     secondaryRectColor: "#484848",
     primaryTextColor: "#ffffff",
     clickableColor: "#484848",
-    secondaryTextColor: "#000000",
+    secondaryTextColor: "#ffffff",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
@@ -59,22 +53,36 @@ const Layout = ({ children }) => {
     backgroundColor: "#ffffff",
   }
 
-  const { currentTheme } = useGlobalStateContext()
-
-  let theme;
-  switch (currentTheme) {
-    case "photo":
-      theme = blackTheme
-      break
-    case "software":
-      theme = greenTheme
-      break
-    default:
-      theme = blueTheme
-      break
+  const redTheme = {
+    primaryRectColor: "#fa8a80",
+    secondaryRectColor: "#ffffff",
+    primaryTextColor: "#ffffff",
+    clickableColor: "#000000",
+    secondaryTextColor: "#ffffff",
+    iconColor: "#ffffff",
+    backgroundColor: "#000000",
   }
 
-  console.log(theme);
+  const [navOpen, toggleNav] = useState(false);
+  
+  const { currentTheme } = useGlobalStateContext()
+  let theme
+
+  if (navOpen) {
+    theme = redTheme;
+  } else {
+    switch (currentTheme) {
+      case "photo":
+        theme = blackTheme
+        break
+      case "software":
+        theme = greenTheme
+        break
+      default:
+        theme = blueTheme
+        break
+    }
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -88,8 +96,6 @@ const Layout = ({ children }) => {
                 id="svgId"
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                x="0"
-                y="0"
                 width="100%"
                 height="100%"
                 preserveAspectRatio="none"
@@ -98,8 +104,17 @@ const Layout = ({ children }) => {
               </svg>
             </SVGContainer>
             <ChildContainer>
-              <Header siteTitle={data.site.siteMetadata.title} />
-              {children}
+              <Header 
+                navIsOpen={navOpen}
+                toggleNav={toggleNav} />
+                {!navOpen && (
+                  <SimpleReactLightbox>
+                    { children }
+                  </SimpleReactLightbox>
+                )}
+                {navOpen && (
+                  <NavItems></NavItems>
+                )}
             </ChildContainer>
           </Main>
         </Content>

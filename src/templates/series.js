@@ -32,10 +32,12 @@ const SeriesTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Link to="/photography/" state={{ fromSeries: true }}>Back</Link>
       <h1>{title}</h1>
       <p>{description}</p>
 
       {images.map((image, index) => {
+        console.log(image);
         const title = image.title
         const description = image.description
         const imageURL = image.URL.childImageSharp.fluid
@@ -48,7 +50,6 @@ const SeriesTemplate = ({ data }) => {
           ></PhotographyDetailView>
         )
       })}
-      <Link to="/photography/">Back</Link>
     </Layout>
   )
 }

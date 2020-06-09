@@ -35,6 +35,13 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `landscape-photos`,
+        path: `${__dirname}/src/data`,
+      },
+    },
     'gatsby-plugin-react-svg',
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,

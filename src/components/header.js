@@ -5,30 +5,42 @@ import { useGlobalStateContext } from "../context/global-context"
 
 import {
   HeaderWrapper,
+  CloseContainer,
   MenuIcon,
   NavHeader,
   BookEnd,
 } from "../styles/header-styles"
 
-const Header = ({ siteTitle }) => {
+import Close from "../images/svg/icons/close-24px.svg"
+
+const Header = ({ navIsOpen, toggleNav }) => {
   // access the global state context to change the theme of our app (eg when the user changes pages)
-  const { currentTheme } = useGlobalStateContext()
+  let { currentTheme } = useGlobalStateContext()
+  if (navIsOpen) {
+    currentTheme = "menu";
+  }
 
   return (
     <HeaderWrapper>
       <MenuIcon>
-        <motion.svg
-          whileHover={{ scale: 1.5, rotate: 90 }}
-          onHoverStart={e => {}}
-          onHoverEnd={e => {}}
-          className="menu-open"
-          label="Open menu"
-          width="30"
-          height="30"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="30" height="30" rx="5" />
-        </motion.svg>
+        {navIsOpen && (
+          <CloseContainer
+            whileHover={{ scale: 1.2 }}
+            onClick={() => toggleNav(!navIsOpen)}
+            className={"menu-close"}
+          >
+            <Close width="30" />
+          </CloseContainer>
+        )}
+        {!navIsOpen && (
+          <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+            onClick={() => toggleNav(!navIsOpen)}
+            className="menu-open"
+            label="Open menu"
+          ></motion.div>
+        )}
       </MenuIcon>
       <NavHeader>{currentTheme}</NavHeader>
       <BookEnd />

@@ -21,7 +21,7 @@ export const GlobalProvider = ({children}) => {
 
     // set the default state here... useful for when user manually navigates to page
     const path = window.location.pathname;
-    let theme = 'about';
+    let theme = 'welcome';
     if (path.search("about") !== -1) {
         theme = "about";
     } else if (path.search("software") !== -1) {

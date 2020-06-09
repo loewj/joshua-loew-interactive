@@ -6,14 +6,14 @@
     "slug": "cambridge-architecture",
     "images": [
       {
-        "title": "Bus Stop",
-        "description": "People need to get picked up.",
-        "URL": "../images/photos/series/cambridge/bus_stop.jpg"
-      },
-      {
         "title": "Green St.",
         "description": "Concrete stretching upwards.",
         "URL": "../images/photos/series/cambridge/green_st.jpg"
+      },
+      {
+        "title": "Bus Stop",
+        "description": "Buses are for lovers.",
+        "URL": "../images/photos/series/cambridge/bus_stop.jpg"
       },
       {
         "title": "Ivy",
@@ -24,6 +24,69 @@
         "title": "Tech Sq.",
         "description": "Abstract architectural photograph from Tech Sq.",
         "URL": "../images/photos/series/cambridge/tech_square.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Italy, 2019",
+    "description": "In Spring of 2019, I had the pleasure of traveling to Italy to meet many of my family members for the first time.",
+    "coverImageURL": "../images/photos/series/italy/cloud_boy.jpg",
+    "slug": "italy",
+    "images": [
+      {
+        "title": "Cloud Boy",
+        "description": "Ovo Castle in Naples, Italy.",
+        "URL": "../images/photos/series/italy/cloud_boy.jpg"
+      },
+      {
+        "title": "Napoli",
+        "description": "In the streets of Naples.",
+        "URL": "../images/photos/series/italy/naples_street.jpg"
+      },
+      {
+        "title": "Chugging Along to Venice",
+        "description": "Taken while waiting for a Venice-bound train to arrive.",
+        "URL": "../images/photos/series/italy/train.jpg"
+      },
+      {
+        "title": "Happy Masks",
+        "description": "Masks for sale in Venice.",
+        "URL": "../images/photos/series/italy/venice_masks.jpg"
+      },
+      {
+        "title": "Amalfi Watchdog",
+        "description": "Looking over the coast.",
+        "URL": "../images/photos/series/italy/watchdog.jpg"
+      },
+      {
+        "title": "Amalfi Residents",
+        "description": "Wandering through the streets.",
+        "URL": "../images/photos/series/italy/amalfi_residents.jpg"
+      },
+      {
+        "title": "Vatican",
+        "description": "Outside St. Peter's Baldachin.",
+        "URL": "../images/photos/series/italy/vatican.jpg"
+      },
+      {
+        "title": "Pantheon",
+        "description": "Outside of the ancient Roman temple.",
+        "URL": "../images/photos/series/italy/pantheon.jpg"
+      },
+      {
+        "title": "Oculus",
+        "description": "Looking out to the sky.",
+        "URL": "../images/photos/series/italy/oculus.jpg"
+      },
+      {
+        "title": "Obelisk",
+        "description": "An obelisk in Rome.",
+        "URL": "../images/photos/series/italy/obelisk.jpg"
+      },
+      {
+        "title": "Chestnuts",
+        "description": "Chestnuts for sale in the streets of Rome.",
+        "URL": "../images/photos/series/italy/chestnuts.jpg"
       }
     ]
   }
