@@ -11,7 +11,7 @@ import {
   BookEnd,
 } from "../styles/header-styles"
 
-import Close from "../images/svg/icons/close-24px.svg"
+import Close from "../images/svg/icons/close.svg"
 
 const Header = ({ navIsOpen, toggleNav }) => {
   // access the global state context to change the theme of our app (eg when the user changes pages)

@@ -2,6 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PhotographyDetailView from "../components/photography-detail-view"
+import { motion } from "framer-motion"
+import Back from "../images/svg/icons/back.svg"
+import { BackButtonContainer } from "../styles/photography-styles"
 
 export const query = graphql`
   query($slug: String!) {
@@ -32,12 +35,15 @@ const SeriesTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Link to="/photography/" state={{ fromSeries: true }}>Back</Link>
+      <BackButtonContainer>
+        <Link to="/photography/" state={{ fromSeries: true }}>
+            <Back width="30" />
+        </Link>
+      </BackButtonContainer>
       <h1>{title}</h1>
       <p>{description}</p>
 
       {images.map((image, index) => {
-        console.log(image);
         const title = image.title
         const description = image.description
         const imageURL = image.URL.childImageSharp.fluid

@@ -1,29 +1,92 @@
 [
   {
-    "title": "Cambridge Architecture",
-    "description": "B&W photos from the Inman and Central Sq. areas in Cambridge, MA.",
-    "coverImageURL": "../images/photos/series/cambridge/green_st.jpg",
-    "slug": "cambridge-architecture",
+    "title": "GDMBR, 2019",
+    "description": "Image captured between Canada and Mexico along the spine of the Rockies.",
+    "coverImageURL": "../images/photos/series/gdmbr/mt_2.jpg",
+    "slug": "gdmbr",
     "images": [
       {
-        "title": "Green St.",
-        "description": "Concrete stretching upwards.",
-        "URL": "../images/photos/series/cambridge/green_st.jpg"
+        "title": "Red Meadow Lake",
+        "description": "The view from our tent at Red Meadow Lake above Whitefish, MT.",
+        "URL": "../images/photos/series/gdmbr/mt_2.jpg"
       },
       {
-        "title": "Bus Stop",
-        "description": "Buses are for lovers.",
-        "URL": "../images/photos/series/cambridge/bus_stop.jpg"
+        "title": "Red Meadow Lake 2",
+        "description": "An unusual color cast over the mountain after a raging hail storm.",
+        "URL": "../images/photos/series/gdmbr/mt_1.jpg"
       },
       {
-        "title": "Ivy",
-        "description": "Ivy crawling on a chain link fence.",
-        "URL": "../images/photos/series/cambridge/fence.jpg"
+        "title": "Atop Stemple Pass",
+        "description": "My reward for a grueling climb. An increible view followed by a white-knuckle descent.",
+        "URL": "../images/photos/series/gdmbr/mt_3.jpg"
       },
       {
-        "title": "Tech Sq.",
-        "description": "Abstract architectural photograph from Tech Sq.",
-        "URL": "../images/photos/series/cambridge/tech_square.jpg"
+        "title": "Gravelly Range Road",
+        "description": "A fire detour sent me down this incredible road.",
+        "URL": "../images/photos/series/gdmbr/mt_4.jpg"
+      },
+      {
+        "title": "Gravelly Range Road 2",
+        "description": "Just before arriving at the warmest hospitality of Barbara Nye and John Keller.",
+        "URL": "../images/photos/series/gdmbr/mt_5.jpg"
+      },
+      {
+        "title": "Outside South Pass City, WY",
+        "description": "Captured just before arriving in the collapsed mining town of South Pass City, followed by Atlantic City.",
+        "URL": "../images/photos/series/gdmbr/wy_1.jpg"
+      },
+      {
+        "title": "Outside South Pass City, WY 2",
+        "description": "Boundless nothingness.",
+        "URL": "../images/photos/series/gdmbr/wy_2.jpg"
+      },
+      {
+        "title": "Coulter Bay",
+        "description": "A 10-stop ND captures movement in the clouds above the Tetons.",
+        "URL": "../images/photos/series/gdmbr/wy_3.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Colombia, 2019",
+    "description": "A selection of photographs from Medellin, Jardin, Salento, and the Amazon.",
+    "coverImageURL": "../images/photos/series/colombia/paramos.jpg",
+    "slug": "colombia",
+    "images": [
+      {
+        "title": "Paramos",
+        "description": "One of the most unique sights I've ever seen.",
+        "URL": "../images/photos/series/colombia/paramos.jpg"
+      },
+      {
+        "title": "In the Clouds",
+        "description": "Looking back down from the heavens.",
+        "URL": "../images/photos/series/colombia/clouds.jpg"
+      },
+      {
+        "title": "Finca Argentina",
+        "description": "Our farmstay the day before the ascent up to 16,000'.",
+        "URL": "../images/photos/series/colombia/finca.jpg"
+      },
+      {
+        "title": "Bikers",
+        "description": "Sending a corner in the night.",
+        "URL": "../images/photos/series/colombia/bikers.jpg"
+      },
+      {
+        "title": "Roots",
+        "description": "Enormous buttress roots on the floor of the Amazon.",
+        "URL": "../images/photos/series/colombia/root.jpg"
+      },
+      {
+        "title": "99 Pesos",
+        "description": "A bustling marketplace in Medellin.",
+        "URL": "../images/photos/series/colombia/busy_market.jpg"
+      },
+      {
+        "title": "Helping Hand",
+        "description": "A parent and child pass beneath a bridge.",
+        "URL": "../images/photos/series/colombia/hands.jpg"
       }
     ]
   },
@@ -87,6 +150,34 @@
         "title": "Chestnuts",
         "description": "Chestnuts for sale in the streets of Rome.",
         "URL": "../images/photos/series/italy/chestnuts.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Cambridge Architecture",
+    "description": "B&W photos from the Inman and Central Sq. areas in Cambridge, MA.",
+    "coverImageURL": "../images/photos/series/cambridge/green_st.jpg",
+    "slug": "cambridge-architecture",
+    "images": [
+      {
+        "title": "Green St.",
+        "description": "Concrete stretching upwards.",
+        "URL": "../images/photos/series/cambridge/green_st.jpg"
+      },
+      {
+        "title": "Bus Stop",
+        "description": "Buses are for lovers.",
+        "URL": "../images/photos/series/cambridge/bus_stop.jpg"
+      },
+      {
+        "title": "Ivy",
+        "description": "Ivy crawling on a chain link fence.",
+        "URL": "../images/photos/series/cambridge/fence.jpg"
+      },
+      {
+        "title": "Tech Sq.",
+        "description": "Abstract architectural photograph from Tech Sq.",
+        "URL": "../images/photos/series/cambridge/tech_square.jpg"
       }
     ]
   }
