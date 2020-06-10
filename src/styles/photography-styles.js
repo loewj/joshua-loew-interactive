@@ -45,3 +45,12 @@ export const BackButtonContainer = styled.div`
     fill: ${props => props.theme.primaryTextColor};
   }
 `
+
+export const LandscapeWrapper = styled.div`
+  margin-top: 3rem;
+  ul {
+    padding: 0;
+    width: 90%;
+    margin: auto;
+  }
+`

@@ -4,7 +4,7 @@ export const AboutContainer = styled.div``
 
 export const TextContainer = styled.div``
 
-export const TextBlock = styled.h3``
+export const TextBlock = styled.p``
 
 export const Signature = styled.h2`
   margin-top: 3rem;

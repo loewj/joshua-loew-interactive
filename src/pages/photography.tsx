@@ -4,14 +4,19 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
+import { motion, AnimatePresence } from "framer-motion"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 import PhotographySeriesView from "../components/photography-series-view"
-import { ButtonContainer, PhotoCaption } from "../styles/photography-styles"
+import {
+  ButtonContainer,
+  PhotoCaption,
+  LandscapeWrapper,
+} from "../styles/photography-styles"
 
 import { SRLWrapper } from "simple-react-lightbox"
 
-const PhotographyPage = ({location}) => {
+const PhotographyPage = ({ location }) => {
   const photoData = useStaticQuery(graphql`
     {
       allPhotographySeriesJson {
@@ -83,15 +88,33 @@ const PhotographyPage = ({location}) => {
     },
   }
 
-  const childElements = landscapePhotos.map(({ node: landscape }, index) => {
-    const title = landscape.title
-    const imageURL = landscape.imageURL.childImageSharp.fluid
-    const thumbURL = landscape.imageURL.childImageSharp.fixed
+  const landscapeElements = landscapePhotos.map(
+    ({ node: landscape }, index) => {
+      const title = landscape.title
+      const imageURL = landscape.imageURL.childImageSharp.fluid
+      const thumbURL = landscape.imageURL.childImageSharp.fixed
+
+      return (
+        <a key={index} href={imageURL.src} data-attribute="SRL">
+          <img src={thumbURL.src} alt={title} width={200} />
+        </a>
+      )
+    }
+  )
+
+  const seriesElements = photoSeries.map(({ node: series }, index) => {
+    const title = series.title
+    const description = series.description
+    const coverImageURL = series.coverImageURL.childImageSharp.fluid
+    const slug = series.slug
 
     return (
-      <a key={index} href={imageURL.src} data-attribute="SRL">
-        <img src={thumbURL.src} alt={title} />
-      </a>
+      <PhotographySeriesView
+        key={index}
+        title={title}
+        description={description}
+        slug={slug}
+      ></PhotographySeriesView>
     )
   })
 
@@ -130,37 +153,42 @@ const PhotographyPage = ({location}) => {
         </button>
       </ButtonContainer>
 
-      {selectedGallery === "LANDSCAPE" && (
-        <SRLWrapper options={options} customCaptions={customCaptions}>
-          <Masonry
-            data-attribute="SRL"
-            className={"my-gallery-class"} // default ''
-            elementType={"ul"} // default 'div'
-            options={masonryOptions} // default {}
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+      <AnimatePresence>
+        {selectedGallery === "LANDSCAPE" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ delayChildren: 0.5 }}
           >
-            {childElements}
-          </Masonry>
-        </SRLWrapper>
-      )}
+            <LandscapeWrapper>
+              <SRLWrapper options={options} customCaptions={customCaptions}>
+                <Masonry
+                  data-attribute="SRL"
+                  className={"my-gallery-class"} // default ''
+                  elementType={"ul"} // default 'div'
+                  options={masonryOptions} // default {}
+                  disableImagesLoaded={false} // default false
+                  updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                >
+                  {landscapeElements}
+                </Masonry>
+              </SRLWrapper>
+            </LandscapeWrapper>
+          </motion.div>
+        )}
 
-      {selectedGallery === "SERIES" &&
-        photoSeries.map(({ node: series }, index) => {
-          const title = series.title
-          const description = series.description
-          const coverImageURL = series.coverImageURL.childImageSharp.fluid
-          const slug = series.slug
-
-          return (
-            <PhotographySeriesView
-              key={index}
-              title={title}
-              description={description}
-              slug={slug}
-            ></PhotographySeriesView>
-          )
-        })}
+        {selectedGallery === "SERIES" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delayChildren: 0.5 }}
+            exit={{ opacity: 0 }}
+          >
+            {seriesElements}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Layout>
   )
 }
