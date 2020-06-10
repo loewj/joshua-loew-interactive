@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 import { useGlobalStateContext } from "../context/global-context"
@@ -19,10 +19,9 @@ import {
 import Footer from "./footer"
 import NavItems from "./nav-items"
 import { GlobalStyle } from "../styles/global-styles"
-import SimpleReactLightbox from "simple-react-lightbox";
+import SimpleReactLightbox from "simple-react-lightbox"
 
 const Layout = ({ children }) => {
-
   const blueTheme = {
     primaryRectColor: "#304ffe",
     secondaryRectColor: "#7a7cff",
@@ -38,38 +37,48 @@ const Layout = ({ children }) => {
     secondaryRectColor: "#484848",
     primaryTextColor: "#ffffff",
     clickableColor: "#484848",
-    secondaryTextColor: "#ffffff",
+    secondaryTextColor: "#000000",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
 
   const greenTheme = {
-    primaryRectColor: "#00c853",
-    secondaryRectColor: "#5efc82",
+    primaryRectColor: "#66bb6a",
+    secondaryRectColor: "#98ee99",
     primaryTextColor: "#000000",
-    clickableColor: "#5efc82",
-    secondaryTextColor: "#009624",
+    clickableColor: "#98ee99",
+    secondaryTextColor: "#338a3e",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
 
   const redTheme = {
     primaryRectColor: "#fa8a80",
-    secondaryRectColor: "#ffffff",
-    primaryTextColor: "#ffffff",
+    secondaryRectColor: "#c85a54",
+    primaryTextColor: "#000000",
     clickableColor: "#000000",
-    secondaryTextColor: "#ffffff",
+    secondaryTextColor: "#c85a54",
     iconColor: "#ffffff",
     backgroundColor: "#000000",
   }
 
-  const [navOpen, toggleNav] = useState(false);
-  
+  const cobaltTheme = {
+    primaryRectColor: "#7986cb",
+    secondaryRectColor: "#aab6fe",
+    primaryTextColor: "#000000",
+    clickableColor: "#aab6fe",
+    secondaryTextColor: "#49599a",
+    iconColor: "#000000",
+    backgroundColor: "#ffffff",
+  }
+
+  const [navOpen, toggleNav] = useState(false)
+
   const { currentTheme } = useGlobalStateContext()
   let theme
 
   if (navOpen) {
-    theme = redTheme;
+    theme = redTheme
   } else {
     switch (currentTheme) {
       case "photo":
@@ -77,6 +86,9 @@ const Layout = ({ children }) => {
         break
       case "software":
         theme = greenTheme
+        break
+      case "blog":
+        theme = cobaltTheme
         break
       default:
         theme = blueTheme
@@ -104,17 +116,11 @@ const Layout = ({ children }) => {
               </svg>
             </SVGContainer>
             <ChildContainer>
-              <Header 
-                navIsOpen={navOpen}
-                toggleNav={toggleNav} />
-                {!navOpen && (
-                  <SimpleReactLightbox>
-                    { children }
-                  </SimpleReactLightbox>
-                )}
-                {navOpen && (
-                  <NavItems></NavItems>
-                )}
+              <Header navIsOpen={navOpen} toggleNav={toggleNav} />
+              {!navOpen && (
+                <SimpleReactLightbox>{children}</SimpleReactLightbox>
+              )}
+              {navOpen && <NavItems></NavItems>}
             </ChildContainer>
           </Main>
         </Content>

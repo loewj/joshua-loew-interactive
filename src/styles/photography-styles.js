@@ -28,6 +28,10 @@ export const PhotoCaption = styled.div`
 
 export const SeriesImageContainer = styled.div`
   margin: auto;
+  img {
+    border: 5px solid #000;
+    border-radius: 5px;
+  }
   span {
     text-transform: uppercase;
     font-weight: bold;

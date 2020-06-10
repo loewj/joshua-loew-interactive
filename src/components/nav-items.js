@@ -54,6 +54,15 @@ const NavItems = () => {
       >
         Photography
       </Link>
+      <Link
+        className={"fourth"}
+        activeClassName="active"
+        to="/blog/"
+        onClick={() => toggleTheme("blog")}
+        replace
+      >
+        Blog
+      </Link>
     </MenuItemsWrapper>
   )
 }

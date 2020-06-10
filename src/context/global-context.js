@@ -28,6 +28,8 @@ export const GlobalProvider = ({children}) => {
         theme = "software";
     } else if (path.search("photography") !== -1) {
         theme = "photo";
+    } else if (path.search("blog") !== -1) {
+        theme = "blog";
     }
 
     const [state, dispatch] = useReducer(globalReducer, {
