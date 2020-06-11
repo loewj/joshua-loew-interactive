@@ -3,6 +3,9 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SoftwareProjectView from '../components/software-project-view';
+import {
+  useGlobalDispatchContext
+} from "../context/global-context"
 
 const SoftwarePage = () => {
 
@@ -21,6 +24,9 @@ const SoftwarePage = () => {
   `)
 
   const softwareProjects = data.allSoftwareProjectsJson.edges;
+
+  const dispatch = useGlobalDispatchContext()
+  dispatch({ type: "TOGGLE_THEME", theme: "software" })
 
   return (
     <Layout>

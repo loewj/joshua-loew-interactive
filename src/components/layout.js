@@ -20,8 +20,19 @@ import Footer from "./footer"
 import NavItems from "./nav-items"
 import { GlobalStyle } from "../styles/global-styles"
 import SimpleReactLightbox from "simple-react-lightbox"
+import { AnimatePresence } from "framer-motion"
 
 const Layout = ({ children }) => {
+  const tealTheme = {
+    primaryRectColor: "#3f51b5",
+    secondaryRectColor: "#757de8",
+    primaryTextColor: "#ffffff",
+    clickableColor: "#002984",
+    secondaryTextColor: "#002984",
+    iconColor: "#000000",
+    backgroundColor: "#ffffff",
+  }
+
   const blueTheme = {
     primaryRectColor: "#304ffe",
     secondaryRectColor: "#7a7cff",
@@ -74,13 +85,16 @@ const Layout = ({ children }) => {
 
   const [navOpen, toggleNav] = useState(false)
 
-  const { currentTheme } = useGlobalStateContext()
+  const { currentTheme } = useGlobalStateContext() || {currentTheme: "welcome"}
   let theme
 
   if (navOpen) {
     theme = redTheme
   } else {
     switch (currentTheme) {
+      case "about":
+        theme = blueTheme
+        break
       case "photo":
         theme = blackTheme
         break
@@ -91,9 +105,28 @@ const Layout = ({ children }) => {
         theme = cobaltTheme
         break
       default:
-        theme = blueTheme
+        theme = tealTheme
         break
     }
+  }
+
+  const duration = 0.5
+  const variants = {
+    initial: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+      transition: {
+        duration: duration,
+        delay: duration,
+        when: "afterChildren",
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: duration },
+    },
   }
 
   return (
@@ -101,28 +134,35 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Container>
         <Content>
-          <Main>
-            {/* <Logo height="50" /> */}
-            <SVGContainer>
-              <svg
-                id="svgId"
-                xmlns="http://www.w3.org/2000/svg"
-                version="1.1"
-                width="100%"
-                height="100%"
-                preserveAspectRatio="none"
-              >
-                <rect width="100%" height="100%" rx="3" ry="3" />
-              </svg>
-            </SVGContainer>
-            <ChildContainer>
-              <Header navIsOpen={navOpen} toggleNav={toggleNav} />
-              {!navOpen && (
-                <SimpleReactLightbox>{children}</SimpleReactLightbox>
-              )}
-              {navOpen && <NavItems></NavItems>}
-            </ChildContainer>
-          </Main>
+          <SVGContainer>
+            <svg
+              id="svgId"
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="none"
+            >
+              <rect fill={theme.primaryRectColor} width="100%" height="100%" rx="3" ry="3" />
+            </svg>
+          </SVGContainer>
+          <AnimatePresence>
+            <Main
+              variants={variants}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+            >
+              {/* <Logo height="50" /> */}
+              <ChildContainer>
+                <Header navIsOpen={navOpen} toggleNav={toggleNav} />
+                {!navOpen && (
+                  <SimpleReactLightbox>{children}</SimpleReactLightbox>
+                )}
+                {navOpen && <NavItems></NavItems>}
+              </ChildContainer>
+            </Main>
+          </AnimatePresence>
         </Content>
       </Container>
       <Footer />

@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import Masonry from "react-masonry-component"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import { motion, AnimatePresence } from "framer-motion"
@@ -15,6 +14,10 @@ import {
 } from "../styles/photography-styles"
 
 import { SRLWrapper } from "simple-react-lightbox"
+
+import {
+  useGlobalDispatchContext
+} from "../context/global-context"
 
 const PhotographyPage = ({ location }) => {
   const photoData = useStaticQuery(graphql`
@@ -59,10 +62,14 @@ const PhotographyPage = ({ location }) => {
     }
   `)
 
+  const dispatch = useGlobalDispatchContext()
+  dispatch({ type: "TOGGLE_THEME", theme: "photo" })
+
   const photoSeries = photoData.allPhotographySeriesJson.edges
   const landscapePhotos = photoData.allLandscapePhotosJson.edges
 
-  const viewing = location.state.fromSeries ? "SERIES" : "LANDSCAPE"
+  const viewing =
+    location.state && location.state.fromSeries ? "SERIES" : "LANDSCAPE"
   const [selectedGallery, selectGallery] = useState(viewing)
 
   const masonryOptions = {

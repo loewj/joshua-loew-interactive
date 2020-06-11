@@ -9,6 +9,7 @@ export const LandingWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: 3rem;
 
   p {
     font-weight: 100;

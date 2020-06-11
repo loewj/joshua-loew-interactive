@@ -5,8 +5,14 @@ import Layout from "../components/layout"
 import Logo from "../images/svg/logo/jl_logo.svg"
 import SEO from "../components/seo"
 import { LandingWrapper } from "../styles/index-styles"
+import {
+  useGlobalDispatchContext
+} from "../context/global-context"
 
 const IndexPage = () => {
+
+  const dispatch = useGlobalDispatchContext()
+  dispatch({ type: "TOGGLE_THEME", theme: "welcome" })
 
   return (
     <Layout>

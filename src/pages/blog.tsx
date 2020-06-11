@@ -3,6 +3,9 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { BlogEntryContainer } from "../styles/blog-styles"
+import {
+  useGlobalDispatchContext
+} from "../context/global-context"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -20,6 +23,9 @@ const BlogPage = () => {
   `)
 
   const posts = data.allContentfulBlogPost.edges
+
+  const dispatch = useGlobalDispatchContext()
+  dispatch({ type: "TOGGLE_THEME", theme: "blog" })
 
   return (
     <Layout>

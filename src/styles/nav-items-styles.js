@@ -1,23 +1,35 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
-export const MenuItemsWrapper = styled.div`
-  margin-top: 5rem;
+export const MenuItemsWrapper = styled(motion.div)`
+
   text-align: center;
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   flex-grow: 1;
-  a {
-    font-weight: 10rem;
+  height: 30vh;
+
+  @media only screen and (max-width: 1124px) {
+    flex-direction: column;
+    margin-top: 3rem;
+    .slash {
+      display: none;
+    }
   }
-  .active {
+
+  a {
+    font-size: 3rem;
+    font-weight: lighter;
     font-style: italic;
   }
-  .first {
+  .active {
+    font-style: normal;
+    font-weight: bold;
   }
-  .second {
-  }
-  .third {
+  span {
+    font-size: 3rem;
+    font-weight: lighter;
   }
 `

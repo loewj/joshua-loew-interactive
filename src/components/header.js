@@ -15,7 +15,7 @@ import Close from "../images/svg/icons/close.svg"
 
 const Header = ({ navIsOpen, toggleNav }) => {
   // access the global state context to change the theme of our app (eg when the user changes pages)
-  let { currentTheme } = useGlobalStateContext()
+  let { currentTheme } = useGlobalStateContext() || {currentTheme: "welcome"}
   if (navIsOpen) {
     currentTheme = "menu";
   }
@@ -34,7 +34,7 @@ const Header = ({ navIsOpen, toggleNav }) => {
         )}
         {!navIsOpen && (
           <motion.div
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.2, rotate: 90 }}
           whileTap={{ scale: 0.9 }}
             onClick={() => toggleNav(!navIsOpen)}
             className="menu-open"

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PhotographyDetailView from "../components/photography-detail-view"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import Back from "../images/svg/icons/back.svg"
 import { BackButtonContainer } from "../styles/photography-styles"
 
