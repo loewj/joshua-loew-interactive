@@ -1,13 +1,14 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
-import { PageProps, Link } from "gatsby"
+import React, {useEffect} from "react"
+import { PageProps } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { TextBlock, Signature, AboutContainer, TextContainer } from "../styles/about-styles"
+import { Signature, AboutContainer, TextContainer } from "../styles/about-styles"
 import {
   useGlobalDispatchContext
 } from "../context/global-context"
+import { StyledP } from "../styles/global-styles"
 
 const AboutPage = (props: PageProps) => {
   // fetch the text for the about page
@@ -27,7 +28,9 @@ const AboutPage = (props: PageProps) => {
   const introText = data.allDataJson.edges[0].node
 
   const dispatch = useGlobalDispatchContext()
-  dispatch({ type: "TOGGLE_THEME", theme: "about" })
+  useEffect(() => {
+    dispatch({ type: "TOGGLE_THEME", theme: "about" })
+  })
 
   return (
     <Layout>
@@ -35,7 +38,7 @@ const AboutPage = (props: PageProps) => {
       <AboutContainer>
         <TextContainer>
           {introText.text.map((el, index) => {
-            return <TextBlock key={index}>{el}</TextBlock>
+            return <StyledP key={index}>{el}</StyledP>
           })}
         </TextContainer>
 

@@ -15,7 +15,7 @@ import Close from "../images/svg/icons/close.svg"
 
 const Header = ({ navIsOpen, toggleNav }) => {
   // access the global state context to change the theme of our app (eg when the user changes pages)
-  let { currentTheme } = useGlobalStateContext() || {currentTheme: "welcome"}
+  let { currentTheme } = useGlobalStateContext()
   if (navIsOpen) {
     currentTheme = "menu";
   }

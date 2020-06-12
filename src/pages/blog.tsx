@@ -1,11 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { BlogEntryContainer } from "../styles/blog-styles"
-import {
-  useGlobalDispatchContext
-} from "../context/global-context"
+import { BlogEntryContainer, BlogCard } from "../styles/blog-styles"
+import { useGlobalDispatchContext } from "../context/global-context"
+import { StyledP } from "../styles/global-styles"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -14,6 +13,7 @@ const BlogPage = () => {
         edges {
           node {
             title
+            description
             slug
             publishedAt(formatString: "MMMM Do, YYYY")
           }
@@ -25,19 +25,24 @@ const BlogPage = () => {
   const posts = data.allContentfulBlogPost.edges
 
   const dispatch = useGlobalDispatchContext()
-  dispatch({ type: "TOGGLE_THEME", theme: "blog" })
+  useEffect(() => {
+    dispatch({ type: "TOGGLE_THEME", theme: "blog" })
+  })
 
   return (
     <Layout>
       <SEO title="Blog" />
       {posts.map(({ node: post }, index) => {
-
         return (
-          <BlogEntryContainer>
-            <h1>{post.title}</h1>
-            <p>{post.publishedAt}</p>
-            <Link to={`/blog/${post.slug}`}>View</Link>
-          </BlogEntryContainer>
+          <Link to={`/blog/${post.slug}`}>
+            <BlogCard key={index} style={{ padding: "1rem" }}>
+              <span style={{ fontStyle: "italic" }}>{post.publishedAt}</span>
+              <h1>{post.title}</h1>
+              <div>
+                <StyledP>{post.description}</StyledP>
+              </div>
+            </BlogCard>
+          </Link>
         )
       })}
     </Layout>

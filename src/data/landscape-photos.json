@@ -7,13 +7,13 @@
   },
   {
     "title": "Now Playing!",
-    "description": "Shot Kodak Portra 160 in Providence, RI.",
+    "description": "Shot on Kodak Portra 160 in Providence, RI.",
     "format": "6x7 Film",
     "imageURL": "../images/photos/landscapes/ppac.jpg"
   },
   {
     "title": "Elegy of Emptiness",
-    "description": "Shot Kodak Fuji Provia 100F in the dunes of Sandwich, MA.",
+    "description": "Shot on Kodak Fuji Provia 100F in the dunes of Sandwich, MA.",
     "format": "6x7 Film",
     "imageURL": "../images/photos/landscapes/sandy_neck_dunes.jpg"
   },
@@ -28,5 +28,23 @@
     "description": "Shot on Kodak Ektar 100 in Los Nevados National Natural Park, Colombia.",
     "format": "6x7 Film",
     "imageURL": "../images/photos/landscapes/uprising.jpg"
+  },
+  {
+    "title": "Sanctuary",
+    "description": "Late fall in Massachusetts.",
+    "format": "Digital",
+    "imageURL": "../images/photos/landscapes/cross_moss.jpg"
+  },
+  {
+    "title": "Untitled",
+    "description": "Shot on Kodak Portra 160. An error in the film processing created this unique color palette.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/gravel_pit.jpg"
+  },
+  {
+    "title": "Twilight Sands",
+    "description": "Shot on Fuji Velvia 50.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/sandy_neck_sand.jpg"
   }
 ]

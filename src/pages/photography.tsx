@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Masonry from "react-masonry-component"
 import { graphql, useStaticQuery } from "gatsby"
 
@@ -11,13 +11,12 @@ import {
   ButtonContainer,
   PhotoCaption,
   LandscapeWrapper,
+  LandscapeCard,
 } from "../styles/photography-styles"
 
 import { SRLWrapper } from "simple-react-lightbox"
 
-import {
-  useGlobalDispatchContext
-} from "../context/global-context"
+import { useGlobalDispatchContext } from "../context/global-context"
 
 const PhotographyPage = ({ location }) => {
   const photoData = useStaticQuery(graphql`
@@ -51,7 +50,7 @@ const PhotographyPage = ({ location }) => {
                 }
               }
               childImageSharp {
-                fixed(width: 200, quality: 100) {
+                fixed(width: 300, quality: 100) {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -63,7 +62,9 @@ const PhotographyPage = ({ location }) => {
   `)
 
   const dispatch = useGlobalDispatchContext()
-  dispatch({ type: "TOGGLE_THEME", theme: "photo" })
+  useEffect(() => {
+    dispatch({ type: "TOGGLE_THEME", theme: "photo" })
+  })
 
   const photoSeries = photoData.allPhotographySeriesJson.edges
   const landscapePhotos = photoData.allLandscapePhotosJson.edges
@@ -74,6 +75,7 @@ const PhotographyPage = ({ location }) => {
 
   const masonryOptions = {
     transitionDuration: 0,
+    gutter: 10,
   }
 
   const options = {
@@ -102,9 +104,15 @@ const PhotographyPage = ({ location }) => {
       const thumbURL = landscape.imageURL.childImageSharp.fixed
 
       return (
-        <a key={index} href={imageURL.src} data-attribute="SRL">
-          <img src={thumbURL.src} alt={title} width={200} />
-        </a>
+        <LandscapeCard>
+          <a
+            key={index}
+            href={imageURL.src}
+            data-attribute="SRL"
+          >
+            <img src={thumbURL.src} alt={title} width={300} />
+          </a>
+        </LandscapeCard>
       )
     }
   )
@@ -120,6 +128,7 @@ const PhotographyPage = ({ location }) => {
         key={index}
         title={title}
         description={description}
+        coverImageURL={coverImageURL}
         slug={slug}
       ></PhotographySeriesView>
     )

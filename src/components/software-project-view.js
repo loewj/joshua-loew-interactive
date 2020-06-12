@@ -6,7 +6,7 @@ const SoftwareProjectView = ({ title, description, launchURL }) => (
     <h1>{title}</h1>
     <p>{description}</p>
     {launchURL.length > 0 && (
-      <a href={`${launchURL}`} target="_blank" rel="noreferrer">
+      <a style={{textDecoration: "underline"}} href={`${launchURL}`} target="_blank" rel="noreferrer">
         Launch
       </a>
     )}

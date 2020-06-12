@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 // import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -12,7 +12,9 @@ import {
 const IndexPage = () => {
 
   const dispatch = useGlobalDispatchContext()
-  dispatch({ type: "TOGGLE_THEME", theme: "welcome" })
+  useEffect(() => {
+    dispatch({ type: "TOGGLE_THEME", theme: "welcome" })
+  })
 
   return (
     <Layout>

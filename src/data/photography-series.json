@@ -1,7 +1,7 @@
 [
   {
-    "title": "GDMBR, 2019",
-    "description": "Images captured between Canada and Mexico along the spine of the Rockies.",
+    "title": "The Great Divide Mountain Bike Route",
+    "description": "Images captured between Canada and Mexico along the spine of the Rockies from my bicycle.",
     "coverImageURL": "../images/photos/series/gdmbr/mt_2.jpg",
     "slug": "gdmbr",
     "images": [
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "title": "Colombia, 2019",
+    "title": "Colombia",
     "description": "A selection of photographs from Medellin, Jardin, Salento, and the Amazon.",
     "coverImageURL": "../images/photos/series/colombia/paramos.jpg",
     "slug": "colombia",
@@ -91,7 +91,7 @@
     ]
   },
   {
-    "title": "Italy, 2019",
+    "title": "Italy",
     "description": "In Spring of 2019, I had the pleasure of traveling to Italy to meet many of my family members for the first time.",
     "coverImageURL": "../images/photos/series/italy/cloud_boy.jpg",
     "slug": "italy",

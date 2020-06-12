@@ -9,6 +9,7 @@ export const ButtonContainer = styled.div`
     border: none;
     text-align: center;
     font-size: 2rem;
+    font-weight: 200;
     outline: 0;
   }
   .active {
@@ -57,4 +58,62 @@ export const LandscapeWrapper = styled.div`
     width: 90%;
     margin: auto;
   }
+`
+
+export const SeriesCard = styled.div`
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-end;
+
+  @media only screen and (max-width: 950px) {
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
+  }
+
+  background: #181818;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.01);
+  }
+
+  .left {
+    flex: 1;
+  }
+
+  .right {
+    flex: 1;
+  }
+`
+
+export const LandscapeCard = styled.div`
+  h1 {
+    font-weight: 100;
+  }
+
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.01);
+  }
+
+  margin-bottom: 10px;
+`
+
+/* Add some padding inside the card container */
+export const TileContainer = styled.div`
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 `

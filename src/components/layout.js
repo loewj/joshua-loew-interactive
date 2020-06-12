@@ -95,9 +95,7 @@ const Layout = ({ children }) => {
 
   const [navOpen, toggleNav] = useState(false)
 
-  const { currentTheme } = useGlobalStateContext() || {
-    currentTheme: "welcome",
-  }
+  const { currentTheme } = useGlobalStateContext()
   let theme
 
   if (navOpen) {

@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 import { normalize } from "styled-normalize"
+import styled from "styled-components"
+
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -29,4 +31,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+`
+
+export const StyledP = styled.p`
+  font-weight: 200;
 `

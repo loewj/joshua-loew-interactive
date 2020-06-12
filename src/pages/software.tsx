@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -26,7 +26,9 @@ const SoftwarePage = () => {
   const softwareProjects = data.allSoftwareProjectsJson.edges;
 
   const dispatch = useGlobalDispatchContext()
-  dispatch({ type: "TOGGLE_THEME", theme: "software" })
+  useEffect(() => {
+    dispatch({ type: "TOGGLE_THEME", theme: "software" })
+  })
 
   return (
     <Layout>

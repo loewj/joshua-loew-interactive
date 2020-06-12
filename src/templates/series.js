@@ -1,10 +1,13 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PhotographyDetailView from "../components/photography-detail-view"
 // import { motion } from "framer-motion"
 import Back from "../images/svg/icons/back.svg"
 import { BackButtonContainer } from "../styles/photography-styles"
+import {
+  useGlobalDispatchContext
+} from "../context/global-context"
 
 export const query = graphql`
   query($slug: String!) {
@@ -32,6 +35,11 @@ const SeriesTemplate = ({ data }) => {
   const title = series.title
   const description = series.description
   const images = series.images
+
+  const dispatch = useGlobalDispatchContext()
+  useEffect(() => {
+    dispatch({ type: "TOGGLE_THEME", theme: "photo" })
+  })
 
   return (
     <Layout>
