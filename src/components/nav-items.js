@@ -22,7 +22,7 @@ const NavItems = () => {
   return (
     <AnimatePresence>
       <MenuItemsWrapper variants={container} initial="hidden" animate="show">
-        <motion.div whileHover={{ scale: 1.1 }} variants={item}>
+        <motion.div whileHover={{ scale: 1.05, }} variants={item}>
           <Link
             className={"first"}
             activeClassName="active"
@@ -34,7 +34,7 @@ const NavItems = () => {
         <motion.span className={"slash"} variants={item}>
           /
         </motion.span>
-        <motion.div variants={item}>
+        <motion.div  whileHover={{ scale: 1.05, }} variants={item}>
           <Link
             activeClassName="active"
             to="/about/"
@@ -45,7 +45,7 @@ const NavItems = () => {
         <motion.span className={"slash"} variants={item}>
           /
         </motion.span>
-        <motion.div variants={item}>
+        <motion.div  whileHover={{ scale: 1.05, }} variants={item}>
           <Link
             activeClassName="active"
             to="/software/"
@@ -56,7 +56,7 @@ const NavItems = () => {
         <motion.span className={"slash"} variants={item}>
           /
         </motion.span>
-        <motion.div variants={item}>
+        <motion.div  whileHover={{ scale: 1.05, }} variants={item}>
           <Link
             activeClassName="active"
             to="/photography/"
@@ -67,7 +67,7 @@ const NavItems = () => {
         <motion.span className={"slash"} variants={item}>
           /
         </motion.span>
-        <motion.div variants={item}>
+        <motion.div  whileHover={{ scale: 1.05, }} variants={item}>
           <Link
             activeClassName="active"
             to="/blog/"

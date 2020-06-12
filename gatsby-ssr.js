@@ -5,9 +5,10 @@
  */
 
 // You can delete this file if you're not using it
-// const React = require("react")
-// const GlobalProvider = require('./src/context/global-context')
+import "./src/styles/global.scss"
+import React from "react"
+import { GlobalProvider } from "./src/context/global-context"
 
-// exports.wrapRootElement = ({element}) => {
-//     return <GlobalProvider>{element}</GlobalProvider>
-// }
+export const wrapRootElement = ({ element }) => {
+  return <GlobalProvider>{element}</GlobalProvider>
+}

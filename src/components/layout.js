@@ -83,9 +83,21 @@ const Layout = ({ children }) => {
     backgroundColor: "#ffffff",
   }
 
+  const yellowTheme = {
+    primaryRectColor: "#fbc02d",
+    secondaryRectColor: "#fff263",
+    primaryTextColor: "#000000",
+    clickableColor: "#c49000",
+    secondaryTextColor: "#c49000",
+    iconColor: "#000000",
+    backgroundColor: "#ffffff",
+  }
+
   const [navOpen, toggleNav] = useState(false)
 
-  const { currentTheme } = useGlobalStateContext() || {currentTheme: "welcome"}
+  const { currentTheme } = useGlobalStateContext() || {
+    currentTheme: "welcome",
+  }
   let theme
 
   if (navOpen) {
@@ -103,6 +115,9 @@ const Layout = ({ children }) => {
         break
       case "blog":
         theme = cobaltTheme
+        break
+      case "404":
+        theme = yellowTheme
         break
       default:
         theme = tealTheme
@@ -143,7 +158,13 @@ const Layout = ({ children }) => {
               height="100%"
               preserveAspectRatio="none"
             >
-              <rect fill={theme.primaryRectColor} width="100%" height="100%" rx="3" ry="3" />
+              <rect
+                fill={theme.primaryRectColor}
+                width="100%"
+                height="100%"
+                rx="3"
+                ry="3"
+              />
             </svg>
           </SVGContainer>
           <AnimatePresence>
