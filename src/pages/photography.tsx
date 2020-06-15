@@ -104,9 +104,8 @@ const PhotographyPage = ({ location }) => {
       const thumbURL = landscape.imageURL.childImageSharp.fixed
 
       return (
-        <LandscapeCard>
+        <LandscapeCard key={index}>
           <a
-            key={index}
             href={imageURL.src}
             data-attribute="SRL"
           >

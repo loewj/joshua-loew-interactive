@@ -16,7 +16,8 @@ const SoftwarePage = () => {
           node {
             title,
             description,
-            launchURL
+            launchURL,
+            tech
           }
         }
       }
@@ -35,9 +36,10 @@ const SoftwarePage = () => {
       <SEO title="Software" />
       {softwareProjects.map(({node: project}, index) => {
 
-        const title = project.title;
-        const description = project.description;
+        const title = project.title
+        const description = project.description
         const launchURL = project.launchURL
+        const tech = project.tech
 
         return (
           <SoftwareProjectView
@@ -45,6 +47,7 @@ const SoftwarePage = () => {
             title={title}
             description={description}
             launchURL={launchURL}
+            tech={tech}
           ></SoftwareProjectView>
         )
 

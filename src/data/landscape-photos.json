@@ -42,6 +42,18 @@
     "imageURL": "../images/photos/landscapes/gravel_pit.jpg"
   },
   {
+    "title": "Untitled",
+    "description": "Captured in Providence, RI.",
+    "format": "Digital",
+    "imageURL": "../images/photos/landscapes/industrial.jpg"
+  },
+  {
+    "title": "Untitled",
+    "description": "Shot on Ilford Delta 100 in Oak Bluffs, MA.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/mv_gift_shop_1.jpg"
+  },
+  {
     "title": "Twilight Sands",
     "description": "Shot on Fuji Velvia 50.",
     "format": "6x7 Film",

@@ -67,6 +67,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        name: `JoshuaLoew`,
+        short_name: `JoshuaLoew`,
+        start_url: `/`,
+        background_color: `#3b50fe`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,

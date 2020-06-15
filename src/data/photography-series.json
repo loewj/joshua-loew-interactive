@@ -93,29 +93,9 @@
   {
     "title": "Italy",
     "description": "In Spring of 2019, I had the pleasure of traveling to Italy to meet many of my family members for the first time.",
-    "coverImageURL": "../images/photos/series/italy/cloud_boy.jpg",
+    "coverImageURL": "../images/photos/series/italy/pantheon.jpg",
     "slug": "italy",
     "images": [
-      {
-        "title": "Cloud Boy",
-        "description": "Ovo Castle in Naples, Italy.",
-        "URL": "../images/photos/series/italy/cloud_boy.jpg"
-      },
-      {
-        "title": "Napoli",
-        "description": "In the streets of Naples.",
-        "URL": "../images/photos/series/italy/naples_street.jpg"
-      },
-      {
-        "title": "Chugging Along to Venice",
-        "description": "Taken while waiting for a Venice-bound train to arrive.",
-        "URL": "../images/photos/series/italy/train.jpg"
-      },
-      {
-        "title": "Happy Masks",
-        "description": "Masks for sale in Venice.",
-        "URL": "../images/photos/series/italy/venice_masks.jpg"
-      },
       {
         "title": "Amalfi Watchdog",
         "description": "Looking over the coast.",
@@ -145,11 +125,6 @@
         "title": "Obelisk",
         "description": "An obelisk in Rome.",
         "URL": "../images/photos/series/italy/obelisk.jpg"
-      },
-      {
-        "title": "Chestnuts",
-        "description": "Chestnuts for sale in the streets of Rome.",
-        "URL": "../images/photos/series/italy/chestnuts.jpg"
       }
     ]
   },
