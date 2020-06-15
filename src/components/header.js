@@ -17,7 +17,7 @@ const Header = ({ navIsOpen, toggleNav }) => {
   // access the global state context to change the theme of our app (eg when the user changes pages)
   let { currentTheme } = useGlobalStateContext()
   if (navIsOpen) {
-    currentTheme = "menu";
+    currentTheme = "menu"
   }
 
   return (
@@ -34,8 +34,8 @@ const Header = ({ navIsOpen, toggleNav }) => {
         )}
         {!navIsOpen && (
           <motion.div
-          whileHover={{ scale: 1.2, rotate: 90 }}
-          whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.2, rotate: 90 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => toggleNav(!navIsOpen)}
             className="menu-open"
             label="Open menu"

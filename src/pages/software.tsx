@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SoftwareProjectView from '../components/software-project-view';

@@ -1,13 +1,11 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PhotographyDetailView from "../components/photography-detail-view"
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 import Back from "../images/svg/icons/back.svg"
 import { BackButtonContainer } from "../styles/photography-styles"
-import {
-  useGlobalDispatchContext
-} from "../context/global-context"
+import { useGlobalDispatchContext } from "../context/global-context"
 
 export const query = graphql`
   query($slug: String!) {
@@ -45,7 +43,12 @@ const SeriesTemplate = ({ data }) => {
     <Layout>
       <BackButtonContainer>
         <Link to="/photography/" state={{ fromSeries: true }}>
+          <motion.div
+            style={{ display: "inline-block" }}
+            whileHover={{ scale: 1.2 }}
+          >
             <Back width="30" />
+          </motion.div>
         </Link>
       </BackButtonContainer>
       <h1>{title}</h1>

@@ -108,6 +108,13 @@ export const LandscapeCard = styled.div`
   }
 
   margin-bottom: 10px;
+
+  /* Otherwise, images overflow on mobile */
+  @media only screen and (max-width: 450px) {
+    img {
+      width: 250px;
+    }
+  }
 `
 
 /* Add some padding inside the card container */

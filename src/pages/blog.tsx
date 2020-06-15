@@ -34,8 +34,8 @@ const BlogPage = () => {
       <SEO title="Blog" />
       {posts.map(({ node: post }, index) => {
         return (
-          <Link to={`/blog/${post.slug}`}>
-            <BlogCard key={index} style={{ padding: "1rem" }}>
+          <Link to={`/blog/${post.slug}`} key={index}>
+            <BlogCard style={{ padding: "1rem" }}>
               <span style={{ fontStyle: "italic" }}>{post.publishedAt}</span>
               <h1>{post.title}</h1>
               <div>

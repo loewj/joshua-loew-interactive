@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const LandingWrapper = styled.div`
-
   /* margin-top: 10rem; */
   height: inherit;
   display: flex;
@@ -22,8 +21,12 @@ export const LandingWrapper = styled.div`
   }
 
   h1 {
-      font-size: 3rem;
-      font-weight: 400;
+    font-size: 3rem;
+    font-weight: 400;
   }
 
+  .item {
+    stroke: #fff;
+    stroke-width: 2;
+  }
 `

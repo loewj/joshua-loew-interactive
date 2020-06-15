@@ -126,7 +126,7 @@ const Layout = ({ children }) => {
   const duration = 0.5
   const variants = {
     initial: {
-      opacity: 0,
+      opacity: 0
     },
     enter: {
       opacity: 1,
@@ -172,7 +172,6 @@ const Layout = ({ children }) => {
               animate="enter"
               exit="exit"
             >
-              {/* <Logo height="50" /> */}
               <ChildContainer>
                 <Header navIsOpen={navOpen} toggleNav={toggleNav} />
                 {!navOpen && (
