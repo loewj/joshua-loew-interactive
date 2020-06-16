@@ -7,7 +7,12 @@ export const BlogPhotoContainer = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    @media only screen and (min-width: 600px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -20,11 +25,10 @@ export const BlogEntryContainer = styled.div`
 `
 
 export const BlogCard = styled.div`
-
   div {
     display: inline-block;
   }
-  
+
   h1 {
     font-weight: 100;
   }

@@ -1,7 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { LandingWrapper, BrandingWrapper, AnimatedLogo } from "../styles/index-styles"
+import {
+  LandingWrapper,
+  BrandingWrapper,
+  AnimatedLogo,
+} from "../styles/index-styles"
 import { motion } from "framer-motion"
 import { PageProps } from "gatsby"
 
@@ -38,7 +42,7 @@ const IndexPage = (props: PageProps) => {
             transition={{
               delay: 0.5,
               default: { duration: 1, ease: "easeInOut" },
-              fill: { duration: 0.5, ease: [1, 0, 0.8, 1], delay: 1.5},
+              fill: { duration: 0.5, ease: [1, 0, 0.8, 1], delay: 1.5 },
             }}
           />
           <motion.path
