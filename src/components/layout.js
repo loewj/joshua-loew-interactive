@@ -19,7 +19,6 @@ import {
 import Footer from "./footer"
 import NavItems from "./nav-items"
 import { GlobalStyle } from "../styles/global-styles"
-import SimpleReactLightbox from "simple-react-lightbox"
 import { AnimatePresence } from "framer-motion"
 
 const Layout = ({ children }) => {
@@ -175,7 +174,7 @@ const Layout = ({ children }) => {
               <ChildContainer>
                 <Header navIsOpen={navOpen} toggleNav={toggleNav} />
                 {!navOpen && (
-                  <SimpleReactLightbox>{children}</SimpleReactLightbox>
+                  children
                 )}
                 {navOpen && <NavItems></NavItems>}
               </ChildContainer>

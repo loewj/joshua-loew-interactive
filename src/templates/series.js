@@ -14,8 +14,8 @@ export const query = graphql`
       description
       images {
         title
-        description
-        URL {
+        caption
+        src {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -31,7 +31,7 @@ const SeriesTemplate = ({ data }) => {
   const series = data.photographySeriesJson
 
   const title = series.title
-  const description = series.description
+  const caption = series.caption
   const images = series.images
 
   const dispatch = useGlobalDispatchContext()
@@ -52,18 +52,18 @@ const SeriesTemplate = ({ data }) => {
         </Link>
       </BackButtonContainer>
       <h1>{title}</h1>
-      <p>{description}</p>
+      <p>{caption}</p>
 
       {images.map((image, index) => {
         const title = image.title
         const description = image.description
-        const imageURL = image.URL.childImageSharp.fluid
+        const imageSrc = image.src.childImageSharp.fluid
         return (
           <PhotographyDetailView
             key={index}
             title={title}
             description={description}
-            imageURL={imageURL}
+            imageURL={imageSrc}
           ></PhotographyDetailView>
         )
       })}

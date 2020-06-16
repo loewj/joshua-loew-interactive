@@ -6,17 +6,23 @@ import Layout from "../components/layout"
 import { motion, AnimatePresence } from "framer-motion"
 // import Image from "../components/image"
 import SEO from "../components/seo"
-import PhotographySeriesView from "../components/photography-series-view"
+import Image from "gatsby-image"
 import {
   ButtonContainer,
   PhotoCaption,
   LandscapeWrapper,
   LandscapeCard,
+  SeriesCard,
+  TileContainer,
 } from "../styles/photography-styles"
 
-import { SRLWrapper } from "simple-react-lightbox"
-
+import SimpleReactLightbox, {
+  SRLWrapper,
+  useLightbox,
+} from "simple-react-lightbox"
 import { useGlobalDispatchContext } from "../context/global-context"
+import { StyledP } from "../styles/global-styles"
+import SRLButton from "../components/lightbox-button"
 
 const PhotographyPage = ({ location }) => {
   const photoData = useStaticQuery(graphql`
@@ -31,6 +37,22 @@ const PhotographyPage = ({ location }) => {
               childImageSharp {
                 fluid(quality: 100) {
                   ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            images {
+              title
+              caption
+              src {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+                childImageSharp {
+                  fixed(width: 300, quality: 100) {
+                    ...GatsbyImageSharpFixed
+                  }
                 }
               }
             }
@@ -78,6 +100,7 @@ const PhotographyPage = ({ location }) => {
     gutter: 10,
   }
 
+  const { openLightbox } = useLightbox()
   const options = {
     settings: {
       overlayColor: "rgb(0, 0, 0)",
@@ -89,12 +112,12 @@ const PhotographyPage = ({ location }) => {
     },
     buttons: {
       showDownloadButton: false,
-      showThumbnailsButton: false,
+      // showThumbnailsButton: false,
       showFullscreenButton: false,
     },
-    thumbnails: {
-      showThumbnails: false,
-    },
+    // thumbnails: {
+    //   showThumbnails: true,
+    // },
   }
 
   const landscapeElements = landscapePhotos.map(
@@ -105,10 +128,7 @@ const PhotographyPage = ({ location }) => {
 
       return (
         <LandscapeCard key={index}>
-          <a
-            href={imageURL.src}
-            data-attribute="SRL"
-          >
+          <a href={imageURL.src} data-attribute="SRL">
             <img src={thumbURL.src} alt={title} width={300} />
           </a>
         </LandscapeCard>
@@ -120,16 +140,32 @@ const PhotographyPage = ({ location }) => {
     const title = series.title
     const description = series.description
     const coverImageURL = series.coverImageURL.childImageSharp.fluid
-    const slug = series.slug
+    const images = series.images.map(el => {
+      return {
+        src: el.src.childImageSharp.fluid.src,
+        thumbnail: el.src.childImageSharp.fixed.src,
+        caption: el.caption,
+        width: 1920,
+        height: "auto",
+      }
+    })
 
     return (
-      <PhotographySeriesView
-        key={index}
-        title={title}
-        description={description}
-        coverImageURL={coverImageURL}
-        slug={slug}
-      ></PhotographySeriesView>
+      <SimpleReactLightbox key={index}>
+        <SeriesCard>
+          <div className={"left"}>
+            <TileContainer>
+              <h1>{title}</h1>
+              <StyledP>{description}</StyledP>
+              <SRLButton light />
+            </TileContainer>
+          </div>
+          <div className={"right"}>
+            <Image fluid={coverImageURL} />
+          </div>
+          <SRLWrapper images={images} options={options} />
+        </SeriesCard>
+      </SimpleReactLightbox>
     )
   })
 
@@ -177,18 +213,20 @@ const PhotographyPage = ({ location }) => {
             transition={{ delayChildren: 0.5 }}
           >
             <LandscapeWrapper>
-              <SRLWrapper options={options} customCaptions={customCaptions}>
-                <Masonry
-                  data-attribute="SRL"
-                  className={"my-gallery-class"} // default ''
-                  elementType={"ul"} // default 'div'
-                  options={masonryOptions} // default {}
-                  disableImagesLoaded={false} // default false
-                  updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-                >
-                  {landscapeElements}
-                </Masonry>
-              </SRLWrapper>
+              <SimpleReactLightbox>
+                <SRLWrapper options={options} customCaptions={customCaptions}>
+                  <Masonry
+                    data-attribute="SRL"
+                    className={"my-gallery-class"} // default ''
+                    elementType={"ul"} // default 'div'
+                    options={masonryOptions} // default {}
+                    disableImagesLoaded={false} // default false
+                    updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                  >
+                    {landscapeElements}
+                  </Masonry>
+                </SRLWrapper>
+              </SimpleReactLightbox>
             </LandscapeWrapper>
           </motion.div>
         )}

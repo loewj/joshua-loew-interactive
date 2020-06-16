@@ -7,43 +7,43 @@
     "images": [
       {
         "title": "Red Meadow Lake",
-        "description": "The view from our tent at Red Meadow Lake above Whitefish, MT.",
-        "URL": "../images/photos/series/gdmbr/mt_2.jpg"
+        "caption": "The view from our tent at Red Meadow Lake above Whitefish, MT.",
+        "src": "../images/photos/series/gdmbr/mt_2.jpg"
       },
       {
         "title": "Red Meadow Lake 2",
-        "description": "An unusual color cast over the mountain after a raging hail storm.",
-        "URL": "../images/photos/series/gdmbr/mt_1.jpg"
+        "caption": "An unusual color cast over the mountain after a raging hail storm.",
+        "src": "../images/photos/series/gdmbr/mt_1.jpg"
       },
       {
         "title": "Atop Stemple Pass",
-        "description": "My reward for a grueling climb. An incredible view followed by a white-knuckle descent.",
-        "URL": "../images/photos/series/gdmbr/mt_3.jpg"
+        "caption": "My reward for a grueling climb. An incredible view followed by a white-knuckle descent.",
+        "src": "../images/photos/series/gdmbr/mt_3.jpg"
       },
       {
         "title": "Gravelly Range Road",
-        "description": "A fire detour sent me down this incredible road.",
-        "URL": "../images/photos/series/gdmbr/mt_4.jpg"
+        "caption": "A fire detour sent me down this incredible road.",
+        "src": "../images/photos/series/gdmbr/mt_4.jpg"
       },
       {
         "title": "Gravelly Range Road 2",
-        "description": "Just before arriving at the warmest hospitality of Barbara Nye and John Keller.",
-        "URL": "../images/photos/series/gdmbr/mt_5.jpg"
+        "caption": "Just before arriving at the warmest hospitality of Barbara Nye and John Keller.",
+        "src": "../images/photos/series/gdmbr/mt_5.jpg"
       },
       {
         "title": "Outside South Pass City, WY",
-        "description": "Captured just before arriving in the collapsed mining town of South Pass City, followed by Atlantic City.",
-        "URL": "../images/photos/series/gdmbr/wy_1.jpg"
+        "caption": "Captured just before arriving in the collapsed mining town of South Pass City, followed by Atlantic City.",
+        "src": "../images/photos/series/gdmbr/wy_1.jpg"
       },
       {
         "title": "Outside South Pass City, WY 2",
-        "description": "Boundless nothingness.",
-        "URL": "../images/photos/series/gdmbr/wy_2.jpg"
+        "caption": "Boundless nothingness.",
+        "src": "../images/photos/series/gdmbr/wy_2.jpg"
       },
       {
         "title": "Coulter Bay",
-        "description": "A 10-stop ND filter captures movement in the clouds above the Tetons.",
-        "URL": "../images/photos/series/gdmbr/wy_3.jpg"
+        "caption": "A 10-stop ND filter captures movement in the clouds above the Tetons.",
+        "src": "../images/photos/series/gdmbr/wy_3.jpg"
       }
     ]
   },
@@ -55,38 +55,38 @@
     "images": [
       {
         "title": "Paramos",
-        "description": "One of the most unique sights I've ever seen.",
-        "URL": "../images/photos/series/colombia/paramos.jpg"
+        "caption": "One of the most unique sights I've ever seen.",
+        "src": "../images/photos/series/colombia/paramos.jpg"
       },
       {
         "title": "In the Clouds",
-        "description": "Looking back down from the heavens.",
-        "URL": "../images/photos/series/colombia/clouds.jpg"
+        "caption": "Looking back down from the heavens.",
+        "src": "../images/photos/series/colombia/clouds.jpg"
       },
       {
         "title": "Finca Argentina",
-        "description": "Our farmstay the day before the ascent up to 16,000'.",
-        "URL": "../images/photos/series/colombia/finca.jpg"
+        "caption": "Our farmstay the day before the ascent up to 16,000'.",
+        "src": "../images/photos/series/colombia/finca.jpg"
       },
       {
         "title": "Bikers",
-        "description": "Sending a corner in the night.",
-        "URL": "../images/photos/series/colombia/bikers.jpg"
+        "caption": "Sending a corner in the night.",
+        "src": "../images/photos/series/colombia/bikers.jpg"
       },
       {
         "title": "Roots",
-        "description": "Enormous buttress roots on the floor of the Amazon.",
-        "URL": "../images/photos/series/colombia/root.jpg"
+        "caption": "Enormous buttress roots on the floor of the Amazon.",
+        "src": "../images/photos/series/colombia/root.jpg"
       },
       {
         "title": "99 Pesos",
-        "description": "A bustling marketplace in Medellin.",
-        "URL": "../images/photos/series/colombia/busy_market.jpg"
+        "caption": "A bustling marketplace in Medellin.",
+        "src": "../images/photos/series/colombia/busy_market.jpg"
       },
       {
         "title": "Helping Hand",
-        "description": "A parent and child pass beneath a bridge.",
-        "URL": "../images/photos/series/colombia/hands.jpg"
+        "caption": "A parent and child pass beneath a bridge.",
+        "src": "../images/photos/series/colombia/hands.jpg"
       }
     ]
   },
@@ -98,33 +98,33 @@
     "images": [
       {
         "title": "Amalfi Watchdog",
-        "description": "Looking over the coast.",
-        "URL": "../images/photos/series/italy/watchdog.jpg"
+        "caption": "Looking over the coast.",
+        "src": "../images/photos/series/italy/watchdog.jpg"
       },
       {
         "title": "Amalfi Residents",
-        "description": "Wandering through the streets.",
-        "URL": "../images/photos/series/italy/amalfi_residents.jpg"
+        "caption": "Wandering through the streets.",
+        "src": "../images/photos/series/italy/amalfi_residents.jpg"
       },
       {
         "title": "Vatican",
-        "description": "Outside St. Peter's Baldachin.",
-        "URL": "../images/photos/series/italy/vatican.jpg"
+        "caption": "Outside St. Peter's Baldachin.",
+        "src": "../images/photos/series/italy/vatican.jpg"
       },
       {
         "title": "Pantheon",
-        "description": "Outside of the ancient Roman temple.",
-        "URL": "../images/photos/series/italy/pantheon.jpg"
+        "caption": "Outside of the ancient Roman temple.",
+        "src": "../images/photos/series/italy/pantheon.jpg"
       },
       {
         "title": "Oculus",
-        "description": "Looking out to the sky.",
-        "URL": "../images/photos/series/italy/oculus.jpg"
+        "caption": "Looking out to the sky.",
+        "src": "../images/photos/series/italy/oculus.jpg"
       },
       {
         "title": "Obelisk",
-        "description": "An obelisk in Rome.",
-        "URL": "../images/photos/series/italy/obelisk.jpg"
+        "caption": "An obelisk in Rome.",
+        "src": "../images/photos/series/italy/obelisk.jpg"
       }
     ]
   },
@@ -136,23 +136,23 @@
     "images": [
       {
         "title": "Green St.",
-        "description": "Concrete stretching upwards.",
-        "URL": "../images/photos/series/cambridge/green_st.jpg"
+        "caption": "Concrete stretching upwards.",
+        "src": "../images/photos/series/cambridge/green_st.jpg"
       },
       {
         "title": "Bus Stop",
-        "description": "Buses are for lovers.",
-        "URL": "../images/photos/series/cambridge/bus_stop.jpg"
+        "caption": "Buses are for lovers.",
+        "src": "../images/photos/series/cambridge/bus_stop.jpg"
       },
       {
         "title": "Ivy",
-        "description": "Ivy crawling on a chain link fence.",
-        "URL": "../images/photos/series/cambridge/fence.jpg"
+        "caption": "Ivy crawling on a chain link fence.",
+        "src": "../images/photos/series/cambridge/fence.jpg"
       },
       {
         "title": "Tech Sq.",
-        "description": "Abstract architectural photograph from Tech Sq.",
-        "URL": "../images/photos/series/cambridge/tech_square.jpg"
+        "caption": "Abstract architectural photograph from Tech Sq.",
+        "src": "../images/photos/series/cambridge/tech_square.jpg"
       }
     ]
   }

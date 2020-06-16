@@ -42,9 +42,9 @@ const IndexPage = () => {
             initial="hidden"
             animate="visible"
             transition={{
-              delay: 1,
-              default: { duration: 2, ease: "easeInOut" },
-              fill: { duration: 2, ease: [1, 0, 0.8, 1] },
+              delay: 0.5,
+              default: { duration: 1, ease: "easeInOut" },
+              fill: { duration: 0.5, ease: [1, 0, 0.8, 1], delay: 1.5},
             }}
           />
           <motion.path
@@ -56,9 +56,9 @@ const IndexPage = () => {
             initial="hidden"
             animate="visible"
             transition={{
-              delay: 1,
-              default: { duration: 2, ease: "easeInOut" },
-              fill: { duration: 2, ease: [1, 0, 0.8, 1] },
+              delay: 0.5,
+              default: { duration: 1, ease: "easeInOut" },
+              fill: { duration: 0.5, ease: [1, 0, 0.8, 1], delay: 1.5 },
             }}
           />
         </motion.svg>
