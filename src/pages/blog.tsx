@@ -1,12 +1,11 @@
 import React, { useEffect } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql, PageProps } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { BlogEntryContainer, BlogCard } from "../styles/blog-styles"
-import { useGlobalDispatchContext } from "../context/global-context"
+import { BlogCard } from "../styles/blog-styles"
 import { StyledP } from "../styles/global-styles"
 
-const BlogPage = () => {
+const BlogPage = (props: PageProps) => {
   const data = useStaticQuery(graphql`
     {
       allContentfulBlogPost(sort: { fields: publishedAt, order: DESC }) {
@@ -24,13 +23,8 @@ const BlogPage = () => {
 
   const posts = data.allContentfulBlogPost.edges
 
-  const dispatch = useGlobalDispatchContext()
-  useEffect(() => {
-    dispatch({ type: "TOGGLE_THEME", theme: "blog" })
-  })
-
   return (
-    <Layout>
+    <Layout location={props.location}>
       <SEO title="Blog" />
       {posts.map(({ node: post }, index) => {
         return (

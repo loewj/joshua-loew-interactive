@@ -1,15 +1,11 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { LandingWrapper, BrandingWrapper, AnimatedLogo } from "../styles/index-styles"
-import { useGlobalDispatchContext } from "../context/global-context"
 import { motion } from "framer-motion"
+import { PageProps } from "gatsby"
 
-const IndexPage = () => {
-  const dispatch = useGlobalDispatchContext()
-  useEffect(() => {
-    dispatch({ type: "TOGGLE_THEME", theme: "welcome" })
-  })
+const IndexPage = (props: PageProps) => {
 
   const icon = {
     hidden: {
@@ -23,7 +19,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout>
+    <Layout location={props.location}>
       <SEO title="Welcome" />
       <LandingWrapper>
         <AnimatedLogo

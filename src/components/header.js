@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { motion } from "framer-motion"
-import { useGlobalStateContext } from "../context/global-context"
 
 import {
   HeaderWrapper,
@@ -13,12 +12,7 @@ import {
 
 import Close from "../images/svg/icons/close.svg"
 
-const Header = ({ navIsOpen, toggleNav }) => {
-  // access the global state context to change the theme of our app (eg when the user changes pages)
-  let { currentTheme } = useGlobalStateContext()
-  if (navIsOpen) {
-    currentTheme = "menu"
-  }
+const Header = ({ navIsOpen, toggleNav, headerTitle }) => {
 
   return (
     <HeaderWrapper>
@@ -42,7 +36,7 @@ const Header = ({ navIsOpen, toggleNav }) => {
           ></motion.div>
         )}
       </MenuIcon>
-      <NavHeader>{currentTheme}</NavHeader>
+      <NavHeader>{headerTitle}</NavHeader>
       <BookEnd />
     </HeaderWrapper>
   )

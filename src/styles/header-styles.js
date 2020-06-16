@@ -30,7 +30,7 @@ export const CloseContainer = styled(motion.div)`
 
 export const NavHeader = styled.h1`
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   font-size: 2rem;
   }
 

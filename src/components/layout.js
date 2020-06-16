@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
-import { useGlobalStateContext } from "../context/global-context"
 
 import Header from "./header"
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 
 import { ThemeProvider } from "styled-components"
 import {
@@ -21,7 +20,7 @@ import NavItems from "./nav-items"
 import { GlobalStyle } from "../styles/global-styles"
 import { AnimatePresence } from "framer-motion"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const tealTheme = {
     primaryRectColor: "#3f51b5",
     secondaryRectColor: "#757de8",
@@ -94,27 +93,35 @@ const Layout = ({ children }) => {
 
   const [navOpen, toggleNav] = useState(false)
 
-  const { currentTheme } = useGlobalStateContext()
+  const currentTheme = location.pathname.split("/")[1]
+
   let theme
+  let headerTitle = "welcome"
 
   if (navOpen) {
     theme = redTheme
+    headerTitle = "menu"
   } else {
     switch (currentTheme) {
       case "about":
         theme = blueTheme
+        headerTitle = "about"
         break
-      case "photo":
+      case "photography":
         theme = blackTheme
+        headerTitle = "photo"
         break
       case "software":
         theme = greenTheme
+        headerTitle = "software"
         break
       case "blog":
         theme = cobaltTheme
+        headerTitle = "blog"
         break
       case "404":
         theme = yellowTheme
+        headerTitle = "404"
         break
       default:
         theme = tealTheme
@@ -125,7 +132,7 @@ const Layout = ({ children }) => {
   const duration = 0.5
   const variants = {
     initial: {
-      opacity: 0
+      opacity: 0,
     },
     enter: {
       opacity: 1,
@@ -138,6 +145,14 @@ const Layout = ({ children }) => {
     exit: {
       opacity: 0,
       transition: { duration: duration },
+    },
+  }
+
+  const backgroundVariants = {
+    navOpen: { fill: theme.primaryRectColor, transition: { duration: 0.3 } },
+    contentShown: {
+      fill: theme.primaryRectColor,
+      transition: { duration: 0.3 },
     },
   }
 
@@ -155,7 +170,9 @@ const Layout = ({ children }) => {
               height="100%"
               preserveAspectRatio="none"
             >
-              <rect
+              <motion.rect
+                animate={navOpen ? "navOpen" : "contentShown"}
+                variants={backgroundVariants}
                 fill={theme.primaryRectColor}
                 width="100%"
                 height="100%"
@@ -172,10 +189,12 @@ const Layout = ({ children }) => {
               exit="exit"
             >
               <ChildContainer>
-                <Header navIsOpen={navOpen} toggleNav={toggleNav} />
-                {!navOpen && (
-                  children
-                )}
+                <Header
+                  navIsOpen={navOpen}
+                  toggleNav={toggleNav}
+                  headerTitle={headerTitle}
+                />
+                {!navOpen && children}
                 {navOpen && <NavItems></NavItems>}
               </ChildContainer>
             </Main>

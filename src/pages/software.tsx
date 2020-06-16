@@ -1,13 +1,10 @@
-import React, {useEffect} from 'react';
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { useStaticQuery, graphql, PageProps } from "gatsby"
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SoftwareProjectView from '../components/software-project-view';
-import {
-  useGlobalDispatchContext
-} from "../context/global-context"
 
-const SoftwarePage = () => {
+const SoftwarePage = (props: PageProps) => {
 
     const data = useStaticQuery(graphql`
     {
@@ -26,13 +23,8 @@ const SoftwarePage = () => {
 
   const softwareProjects = data.allSoftwareProjectsJson.edges;
 
-  const dispatch = useGlobalDispatchContext()
-  useEffect(() => {
-    dispatch({ type: "TOGGLE_THEME", theme: "software" })
-  })
-
   return (
-    <Layout>
+    <Layout location={props.location}>
       <SEO title="Software" />
       {softwareProjects.map(({node: project}, index) => {
 

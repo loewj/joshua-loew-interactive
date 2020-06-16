@@ -1,17 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {
-  useGlobalDispatchContext
-} from "../context/global-context"
+import { PageProps } from "gatsby"
 
-const NotFoundPage = () => {
-
-  const dispatch = useGlobalDispatchContext()
-  dispatch({ type: "TOGGLE_THEME", theme: "404" })
+const NotFoundPage = (props: PageProps) => {
 
   return (
-    <Layout>
+    <Layout location={props.location}>
       <SEO title="404: Not found" />
       <h1>NOT FOUND</h1>
       <p>How'd you get here?</p>

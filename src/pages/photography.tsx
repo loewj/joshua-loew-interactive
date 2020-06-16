@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Masonry from "react-masonry-component"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, PageProps } from "gatsby"
 
 import Layout from "../components/layout"
 import { motion, AnimatePresence } from "framer-motion"
@@ -19,11 +19,10 @@ import SimpleReactLightbox, {
   SRLWrapper,
   useLightbox,
 } from "simple-react-lightbox"
-import { useGlobalDispatchContext } from "../context/global-context"
 import { StyledP } from "../styles/global-styles"
 import SRLButton from "../components/lightbox-button"
 
-const PhotographyPage = ({ location }) => {
+const PhotographyPage = (props: PageProps, location) => {
   const photoData = useStaticQuery(graphql`
     {
       allPhotographySeriesJson {
@@ -80,11 +79,6 @@ const PhotographyPage = ({ location }) => {
       }
     }
   `)
-
-  const dispatch = useGlobalDispatchContext()
-  useEffect(() => {
-    dispatch({ type: "TOGGLE_THEME", theme: "photo" })
-  })
 
   const photoSeries = photoData.allPhotographySeriesJson.edges
   const landscapePhotos = photoData.allLandscapePhotosJson.edges
@@ -180,7 +174,7 @@ const PhotographyPage = ({ location }) => {
   })
 
   return (
-    <Layout>
+    <Layout location={props.location}>
       <SEO title="Photogrphy" />
 
       <ButtonContainer>

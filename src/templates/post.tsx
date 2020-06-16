@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Back from "../images/svg/icons/back.svg"
@@ -7,7 +7,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import { BlogPhotoContainer } from "../styles/blog-styles"
 import { motion } from "framer-motion"
-import { useGlobalDispatchContext } from "../context/global-context"
 
 export const query = graphql`
   query($slug: String!) {
@@ -38,20 +37,15 @@ const options = {
   },
 }
 
-const PostTemplate = ({ data }) => {
+const PostTemplate = ({ location, data }) => {
   const post = data.contentfulBlogPost
 
   const title = post.title
   const publishedAt = post.publishedAt
   const body = post.body.json
 
-  const dispatch = useGlobalDispatchContext()
-  useEffect(() => {
-    dispatch({ type: "TOGGLE_THEME", theme: "blog" })
-  })
-
   return (
-    <Layout>
+    <Layout location={location}>
       <BackButtonContainer>
         <Link to="/blog/" state={{ fromSeries: true }}>
           <motion.div

@@ -12,7 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     blogPosts.forEach(({node: {slug}}) => {
         actions.createPage({
             path: `/blog/${slug}/`,
-            component: require.resolve('./src/templates/post.js'),
+            component: require.resolve('./src/templates/post.tsx'),
             context: {slug}
         });
     });
