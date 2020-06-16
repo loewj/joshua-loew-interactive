@@ -25,12 +25,15 @@ export const MenuIcon = styled.div`
 `
 
 export const CloseContainer = styled(motion.div)`
-  /* cursor: pointer;
-  .menu-close { */
-  }
+
 `
 
 export const NavHeader = styled.h1`
+
+@media only screen and (max-width: 400px) {
+  font-size: 2rem;
+  }
+
   font-size: 3rem;
   font-weight: 400;
   font-style: italic;

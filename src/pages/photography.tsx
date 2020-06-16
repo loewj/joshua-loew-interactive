@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import { motion, AnimatePresence } from "framer-motion"
-// import Image from "../components/image"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
 import {
@@ -32,7 +31,6 @@ const PhotographyPage = ({ location }) => {
           node {
             title
             description
-            slug
             coverImageURL {
               childImageSharp {
                 fluid(quality: 100) {
@@ -157,7 +155,7 @@ const PhotographyPage = ({ location }) => {
             <TileContainer>
               <h1>{title}</h1>
               <StyledP>{description}</StyledP>
-              <SRLButton light />
+              <SRLButton />
             </TileContainer>
           </div>
           <div className={"right"}>

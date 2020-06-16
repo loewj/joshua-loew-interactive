@@ -3,7 +3,6 @@
     "title": "The Great Divide Mountain Bike Route",
     "description": "Images captured between Canada and Mexico along the spine of the Rockies from my bicycle.",
     "coverImageURL": "../images/photos/series/gdmbr/mt_2.jpg",
-    "slug": "gdmbr",
     "images": [
       {
         "title": "Red Meadow Lake",
@@ -51,7 +50,6 @@
     "title": "Colombia",
     "description": "A selection of photographs from Medellin, Jardin, Salento, and the Amazon.",
     "coverImageURL": "../images/photos/series/colombia/paramos.jpg",
-    "slug": "colombia",
     "images": [
       {
         "title": "Paramos",
@@ -94,7 +92,6 @@
     "title": "Italy",
     "description": "In Spring of 2019, I had the pleasure of traveling to Italy to meet many of my family members for the first time.",
     "coverImageURL": "../images/photos/series/italy/pantheon.jpg",
-    "slug": "italy",
     "images": [
       {
         "title": "Amalfi Watchdog",
@@ -132,7 +129,6 @@
     "title": "Cambridge Architecture",
     "description": "B&W photos from the Inman and Central Sq. areas in Cambridge, MA.",
     "coverImageURL": "../images/photos/series/cambridge/green_st.jpg",
-    "slug": "cambridge-architecture",
     "images": [
       {
         "title": "Green St.",

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { LandingWrapper } from "../styles/index-styles"
+import { LandingWrapper, BrandingWrapper, AnimatedLogo } from "../styles/index-styles"
 import { useGlobalDispatchContext } from "../context/global-context"
 import { motion } from "framer-motion"
 
@@ -26,13 +26,11 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Welcome" />
       <LandingWrapper>
-        <motion.svg
+        <AnimatedLogo
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          width="200px"
-          height="200px"
           viewBox="0 0 360 360"
         >
           <motion.path
@@ -61,14 +59,14 @@ const IndexPage = () => {
               fill: { duration: 0.5, ease: [1, 0, 0.8, 1], delay: 1.5 },
             }}
           />
-        </motion.svg>
+        </AnimatedLogo>
 
         <h1>Joshua Loew</h1>
-        <div>
+        <BrandingWrapper>
           <p>Developer</p>
           <p>Designer</p>
           <p>Photographer</p>
-        </div>
+        </BrandingWrapper>
       </LandingWrapper>
     </Layout>
   )

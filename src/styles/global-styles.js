@@ -36,3 +36,14 @@ export const GlobalStyle = createGlobalStyle`
 export const StyledP = styled.p`
   font-weight: 200;
 `
+
+export const Button = styled.button`
+  cursor: pointer;
+  font-style: italic;
+  padding: 1rem;
+  border: none;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  background-color: ${props => props.theme.clickableColor}
+`
