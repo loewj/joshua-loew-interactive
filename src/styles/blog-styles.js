@@ -8,7 +8,7 @@ export const BlogPhotoContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     @media only screen and (min-width: 600px) {
-      width: 50%;
+      width: 35%;
     }
     @media only screen and (max-width: 600px) {
       width: 100%;
@@ -25,12 +25,20 @@ export const BlogEntryContainer = styled.div`
 `
 
 export const BlogCard = styled.div`
+
+  margin: 2rem;
+
   div {
     display: inline-block;
   }
 
   h1 {
     font-weight: 100;
+  }
+
+  span {
+    font-weight: 300;
+    font-style: italic;
   }
 
   /* Add shadows to create the "card" effect */

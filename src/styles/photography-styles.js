@@ -74,12 +74,12 @@ export const SeriesCard = styled.div`
 
   background: #181818;
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
 
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
     transform: scale(1.01);
   }
 
@@ -103,12 +103,12 @@ export const LandscapeCard = styled.div`
   }
 
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
 
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
     transform: scale(1.01);
   }
 

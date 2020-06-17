@@ -30,7 +30,7 @@ const BlogPage = (props: PageProps) => {
         return (
           <Link to={`/blog/${post.slug}`} key={index}>
             <BlogCard style={{ padding: "1rem" }}>
-              <span style={{ fontStyle: "italic" }}>{post.publishedAt}</span>
+              <span>{post.publishedAt}</span>
               <h1>{post.title}</h1>
               <div>
                 <StyledP>{post.description}</StyledP>
