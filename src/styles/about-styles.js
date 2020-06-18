@@ -18,8 +18,18 @@ export const ImageContainer = styled.div`
   justify-content: space-around;
 
   .portrait {
-    width: 33%;
+    width: 25%;
     border: 5px solid #fff;
     border-radius: 5px;
   }
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    .portrait {
+      margin-bottom: 1rem;
+      width: 90%;
+    }
+  }
+
 `

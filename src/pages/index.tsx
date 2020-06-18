@@ -24,7 +24,7 @@ const IndexPage = (props: PageProps) => {
 
   return (
     <Layout location={props.location}>
-      <SEO title="Welcome" />
+      <SEO title="Welcome" description={"Massachusetts based software developer, product designer, and nature/landscape photographer."} />
       <LandingWrapper>
         <AnimatedLogo
           version="1.1"

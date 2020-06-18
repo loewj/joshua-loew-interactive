@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, PageProps } from "gatsby"
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SoftwareProjectView from '../components/software-project-view';
+import { PageTitle } from '../styles/global-styles';
 
 const SoftwarePage = (props: PageProps) => {
 
@@ -25,7 +26,10 @@ const SoftwarePage = (props: PageProps) => {
 
   return (
     <Layout location={props.location}>
-      <SEO title="Software" />
+      <SEO title="Software" description={"A professional software developer with a focus in web engineering. Experience in PHP, SQL, AWS, Angular, React, Node.js, MongoDB, UNIX/Linux, and more."}/>
+      
+      <PageTitle>Software developer with over three years of industry experience.</PageTitle>
+
       {softwareProjects.map(({node: project}, index) => {
 
         const title = project.title

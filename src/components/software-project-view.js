@@ -4,7 +4,7 @@ import { ProjectWrapper } from "../styles/software-styles"
 
 const SoftwareProjectView = ({ title, description, launchURL, tech }) => (
   <ProjectWrapper>
-    <h1>{title}</h1>
+    <h1 style={{fontStyle: "italic"}}>{title}</h1>
     <p>{description}</p>
     <p>Built with: <span>{tech.join(" | ")}</span></p>
     {launchURL.length > 0 && (

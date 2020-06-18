@@ -46,7 +46,7 @@ const Layout = ({ children, location }) => {
     secondaryRectColor: "#484848",
     primaryTextColor: "#ffffff",
     clickableColor: "#484848",
-    secondaryTextColor: "#000000",
+    secondaryTextColor: "#2f2f2f",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }

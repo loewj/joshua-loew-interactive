@@ -10,7 +10,7 @@ import {
   TextContainer,
   ImageContainer,
 } from "../styles/about-styles"
-import { StyledP } from "../styles/global-styles"
+import { StyledP, PageTitle } from "../styles/global-styles"
 import Image from "gatsby-image"
 
 const AboutPage = (props: PageProps) => {
@@ -50,7 +50,10 @@ const AboutPage = (props: PageProps) => {
 
   return (
     <Layout location={props.location}>
-      <SEO title="About" />
+      <SEO title="About" description={"Massachusetts based software engineer, product designer, and nature/landscape photographer."}/>
+      
+      <PageTitle>Passionate about software, product design, photography, and bicycles.</PageTitle>
+      
       <AboutContainer>
         <TextContainer>
           <div className={"intro-text"}>

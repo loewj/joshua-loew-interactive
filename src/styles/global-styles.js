@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components"
 import { normalize } from "styled-normalize"
 import styled from "styled-components"
 
-
 export const GlobalStyle = createGlobalStyle`
 
   ${normalize}
@@ -45,5 +44,12 @@ export const Button = styled.button`
   display: block;
   width: 100%;
   border-radius: 5px;
-  background-color: ${props => props.theme.clickableColor}
+  background-color: ${props => props.theme.clickableColor};
+`
+
+export const PageTitle = styled.h1`
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: ${props => props.theme.secondaryTextColor};
 `

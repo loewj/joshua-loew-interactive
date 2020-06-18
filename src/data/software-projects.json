@@ -30,7 +30,7 @@
     },
     {
         "title": "My ACP Decisions",
-        "description": "My ACP Decisions is a full-stack web application that allows hospice clinicians to curate and distribute informational video playlists for patients. As the core developer of the API and front end written in Angular, I was responsible for feature design, implementation, and documentation. The API is also consumed by as iOS and Android applications written and maintained by other engineering teams. The application integrates with several third party services to create scheduled cloud backups, collect user survey data, and more.",
+        "description": "My ACP Decisions is a full-stack web application that allows hospice clinicians to curate and distribute informational video playlists for patients. As the core developer of the API and front end written in Angular, I was responsible for feature design, implementation, and documentation. The API is also consumed by iOS and Android applications built by other engineering teams. The application integrates with several third party services to create scheduled cloud backups, collect user survey data, and more.",
         "launchURL": "",
         "tech": [
             "Symfony",

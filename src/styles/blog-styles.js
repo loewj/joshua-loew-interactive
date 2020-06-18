@@ -24,9 +24,15 @@ export const BlogEntryContainer = styled.div`
   }
 `
 
-export const BlogCard = styled.div`
+export const PostContainer = styled.div`
+  a {
+    text-decoration: underline
+  }
+`
 
+export const BlogCard = styled.div`
   margin: 2rem;
+  word-wrap: break-word;
 
   div {
     display: inline-block;

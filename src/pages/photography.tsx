@@ -19,7 +19,7 @@ import SimpleReactLightbox, {
   SRLWrapper,
   useLightbox,
 } from "simple-react-lightbox"
-import { StyledP } from "../styles/global-styles"
+import { StyledP, PageTitle } from "../styles/global-styles"
 import SRLButton from "../components/lightbox-button"
 
 const PhotographyPage = (props: PageProps, location) => {
@@ -175,7 +175,9 @@ const PhotographyPage = (props: PageProps, location) => {
 
   return (
     <Layout location={props.location}>
-      <SEO title="Photogrphy" />
+      <SEO title="Photogrphy" description="Massachusetts based nature and landsacpe photographer. Images captured on digital and analog film." />
+
+      <PageTitle>Digital and medium format nature/landscape photographer.</PageTitle>
 
       <ButtonContainer>
         <button

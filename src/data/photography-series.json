@@ -1,5 +1,37 @@
 [
   {
+    "title": "Polaroid SX-70",
+    "description": "My first ever pack of instant film. The unpredictability was equal parts frustrating and exciting. Looking forward to the next one!",
+    "coverImageURL": "../images/photos/series/polaroids/silo.jpg",
+    "images": [
+      {
+        "title": "Silo",
+        "caption": "A silo in Rehoboth, MA.",
+        "src": "../images/photos/series/polaroids/silo.jpg"
+      },
+      {
+        "title": "Fed Building",
+        "caption": "Capture on a cold day outside South Station in Boston, MA. The development went a little sideways. It was likely a combination of the cold weather and gunked up rollers.",
+        "src": "../images/photos/series/polaroids/fed_building.jpg"
+      },
+      {
+        "title": "Storefronts in Attleboro, MA",
+        "caption": "Taken from atop a parking garage.",
+        "src": "../images/photos/series/polaroids/jt.jpg"
+      },
+      {
+        "title": "Chapin Sands",
+        "caption": "Ripples in the sand during low tide. Shot in Dennis, MA.",
+        "src": "../images/photos/series/polaroids/chapin_sands.jpg"
+      },
+      {
+        "title": "Succulent",
+        "caption": "Testing out the SX-70's close-up capabilities.",
+        "src": "../images/photos/series/polaroids/succulent.jpg"
+      }
+    ]
+  },
+  {
     "title": "The Great Divide Mountain Bike Route",
     "description": "Images captured between Canada and Mexico along the spine of the Rockies from my bicycle.",
     "coverImageURL": "../images/photos/series/gdmbr/mt_2.jpg",

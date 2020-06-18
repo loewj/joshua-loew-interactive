@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql, PageProps } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { BlogCard } from "../styles/blog-styles"
-import { StyledP } from "../styles/global-styles"
+import { StyledP, PageTitle } from "../styles/global-styles"
 
 const BlogPage = (props: PageProps) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,10 @@ const BlogPage = (props: PageProps) => {
 
   return (
     <Layout location={props.location}>
-      <SEO title="Blog" />
+      <SEO title="Blog" description={"Web development tutorials, camera talk, and cycling stories."} />
+      
+      <PageTitle>Tutorials and unsolicited opinions on a veriety of topics.</PageTitle>
+      
       {posts.map(({ node: post }, index) => {
         return (
           <Link to={`/blog/${post.slug}`} key={index}>

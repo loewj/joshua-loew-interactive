@@ -5,13 +5,15 @@ import Back from "../images/svg/icons/back.svg"
 import { BackButtonContainer } from "../styles/photography-styles"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
-import { BlogPhotoContainer } from "../styles/blog-styles"
+import { BlogPhotoContainer, PostContainer } from "../styles/blog-styles"
 import { motion } from "framer-motion"
+import SEO from "../components/seo"
 
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
+      description
       publishedAt(formatString: "MMMM Do, YYYY")
       body {
         json
@@ -41,11 +43,13 @@ const PostTemplate = ({ location, data }) => {
   const post = data.contentfulBlogPost
 
   const title = post.title
+  const description = post.description
   const publishedAt = post.publishedAt
   const body = post.body.json
 
   return (
     <Layout location={location}>
+      <SEO title="Blog Post" description={description} />
       <BackButtonContainer>
         <Link to="/blog/" state={{ fromSeries: true }}>
           <motion.div
@@ -58,7 +62,7 @@ const PostTemplate = ({ location, data }) => {
       </BackButtonContainer>
       <h1>{title}</h1>
       <p>{publishedAt}</p>
-      {documentToReactComponents(body, options)}
+      <PostContainer>{documentToReactComponents(body, options)}</PostContainer>
     </Layout>
   )
 }
