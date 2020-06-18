@@ -26,13 +26,12 @@ export const BlogEntryContainer = styled.div`
 
 export const PostContainer = styled.div`
   a {
-    text-decoration: underline
+    text-decoration: underline;
   }
 `
 
 export const BlogCard = styled.div`
   margin: 2rem;
-  word-wrap: break-word;
 
   div {
     display: inline-block;
@@ -40,6 +39,12 @@ export const BlogCard = styled.div`
 
   h1 {
     font-weight: 100;
+  }
+
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.3rem;
+    }
   }
 
   span {
