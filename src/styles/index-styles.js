@@ -26,7 +26,7 @@ export const LandingWrapper = styled.div`
 
   h1 {
     font-size: 3rem;
-    font-weight: 400;
+    font-family: "IBM Plex Sans Thin";
   }
 
   @media only screen and (max-width: 535px) {
@@ -46,8 +46,7 @@ export const BrandingWrapper = styled.div`
   p {
     margin-block-start: 0;
     margin-block-end: 0;
-    font-weight: 100;
-    font-style: italic;
+    font-family: "IBM Plex Sans Thin Italic";
     font-size: 1.5rem;
 
     @media only screen and (min-width: 535px) {

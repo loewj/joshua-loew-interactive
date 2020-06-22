@@ -63,19 +63,6 @@ module.exports = {
     'gatsby-plugin-react-svg',
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        disableOnDev: false,
-        mergeDefaultDirectives: true,
-        directives: {
-          "script-src": "'self' www.google-analytics.com blob: data:",
-          "style-src": "'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com blob: data:",
-          "font-src": "fonts.gstatic.com fonts.googleapis.com blob: data:",
-          "img-src": "'self' data: www.google-analytics.com images.ctfassets.net blob: data:"
-        }
-      }
-    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

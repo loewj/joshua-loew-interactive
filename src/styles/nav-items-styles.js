@@ -20,16 +20,14 @@ export const MenuItemsWrapper = styled(motion.div)`
   }
 
   a {
+    font-family: 'IBM Plex Sans Thin Italic';
     font-size: 3rem;
-    font-weight: lighter;
-    font-style: italic;
   }
   .active {
-    font-style: normal;
-    font-weight: bold;
+    font-family: "IBM Plex Semi Bold Italic";
   }
   span {
     font-size: 3rem;
-    font-weight: lighter;
+    font-family: 'IBM Plex Sans Thin Italic';
   }
 `

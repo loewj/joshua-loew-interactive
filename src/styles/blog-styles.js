@@ -21,7 +21,7 @@ export const BlogPhotoContainer = styled.div`
 
 export const BlogEntryContainer = styled.div`
   p {
-    font-style: italic;
+    font-family: "IBM Plex Sans Thin Italic";
   }
 `
 
@@ -40,7 +40,7 @@ export const BlogCard = styled.div`
   }
 
   h1 {
-    font-weight: 100;
+    font-family: "IBM Plex Sans Thin"
   }
 
   @media only screen and (max-width: 600px) {
@@ -50,8 +50,7 @@ export const BlogCard = styled.div`
   }
 
   span {
-    font-weight: 300;
-    font-style: italic;
+    font-family: "IBM Plex Sans Light Italic";
   }
 
   /* Add shadows to create the "card" effect */

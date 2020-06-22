@@ -23,7 +23,7 @@ import { AnimatePresence } from "framer-motion"
 const Layout = ({ children, location }) => {
   const tealTheme = {
     primaryRectColor: "#3f51b5",
-    secondaryRectColor: "#757de8",
+    secondaryRectColor: "#ffffff",
     primaryTextColor: "#ffffff",
     clickableColor: "#002984",
     secondaryTextColor: "#002984",
@@ -33,7 +33,7 @@ const Layout = ({ children, location }) => {
 
   const blueTheme = {
     primaryRectColor: "#304ffe",
-    secondaryRectColor: "#7a7cff",
+    secondaryRectColor: "#ffffff",
     primaryTextColor: "#ffffff",
     clickableColor: "#7a7cff",
     secondaryTextColor: "#0026ca",
@@ -43,17 +43,17 @@ const Layout = ({ children, location }) => {
 
   const blackTheme = {
     primaryRectColor: "#212121",
-    secondaryRectColor: "#484848",
-    primaryTextColor: "#ffffff",
+    secondaryRectColor: "#ffffff",
+    primaryTextColor: "#484848",
     clickableColor: "#484848",
-    secondaryTextColor: "#2f2f2f",
+    secondaryTextColor: "#484848",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
 
   const greenTheme = {
     primaryRectColor: "#66bb6a",
-    secondaryRectColor: "#98ee99",
+    secondaryRectColor: "#ffffff",
     primaryTextColor: "#000000",
     clickableColor: "#98ee99",
     secondaryTextColor: "#338a3e",
@@ -73,7 +73,7 @@ const Layout = ({ children, location }) => {
 
   const cobaltTheme = {
     primaryRectColor: "#7986cb",
-    secondaryRectColor: "#aab6fe",
+    secondaryRectColor: "#ffffff",
     primaryTextColor: "#000000",
     clickableColor: "#aab6fe",
     secondaryTextColor: "#49599a",
@@ -83,7 +83,7 @@ const Layout = ({ children, location }) => {
 
   const yellowTheme = {
     primaryRectColor: "#fbc02d",
-    secondaryRectColor: "#fff263",
+    secondaryRectColor: "#ffffff",
     primaryTextColor: "#000000",
     clickableColor: "#c49000",
     secondaryTextColor: "#c49000",
