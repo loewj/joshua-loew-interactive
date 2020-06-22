@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 export const BlogPhotoContainer = styled.div`
   img {
@@ -31,6 +32,7 @@ export const PostContainer = styled.div`
 `
 
 export const BlogCard = styled.div`
+  padding: 1rem;
   margin: 2rem;
 
   div {
@@ -61,4 +63,8 @@ export const BlogCard = styled.div`
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
     transform: scale(1.01);
   }
+`
+
+export const BackButton = styled(motion.div)`
+  display: inline-block;
 `

@@ -70,8 +70,8 @@ module.exports = {
         mergeDefaultDirectives: true,
         directives: {
           "script-src": "'self' www.google-analytics.com blob: data:",
-          "style-src": "'self' 'unsafe-inline' fonts.googleapis.com blob: data:",
-          "font-src": "fonts.gstatic.com blob: data:",
+          "style-src": "'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com blob: data:",
+          "font-src": "fonts.gstatic.com fonts.googleapis.com blob: data:",
           "img-src": "'self' data: www.google-analytics.com images.ctfassets.net blob: data:"
         }
       }
@@ -105,8 +105,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
-        head: false,
-        defer: false,
+        head: false
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

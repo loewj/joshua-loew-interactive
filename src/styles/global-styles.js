@@ -53,3 +53,7 @@ export const PageTitle = styled.h1`
   margin-bottom: 3rem;
   color: ${props => props.theme.secondaryTextColor};
 `
+
+export const NotFoundContainer = styled.div`
+  text-align: center;
+`

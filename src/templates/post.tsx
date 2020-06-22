@@ -5,7 +5,7 @@ import Back from "../images/svg/icons/back.svg"
 import { BackButtonContainer } from "../styles/photography-styles"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
-import { BlogPhotoContainer, PostContainer } from "../styles/blog-styles"
+import { BlogPhotoContainer, PostContainer, BackButton } from "../styles/blog-styles"
 import { motion } from "framer-motion"
 import SEO from "../components/seo"
 
@@ -52,12 +52,11 @@ const PostTemplate = ({ location, data }) => {
       <SEO title="Blog Post" description={description} />
       <BackButtonContainer>
         <Link to="/blog/" state={{ fromSeries: true }}>
-          <motion.div
-            style={{ display: "inline-block" }}
+          <BackButton
             whileHover={{ scale: 1.2 }}
           >
             <Back width="30" />
-          </motion.div>
+          </BackButton>
         </Link>
       </BackButtonContainer>
       <h1>{title}</h1>
