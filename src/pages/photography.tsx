@@ -16,8 +16,7 @@ import {
 } from "../styles/photography-styles"
 
 import SimpleReactLightbox, {
-  SRLWrapper,
-  useLightbox,
+  SRLWrapper
 } from "simple-react-lightbox"
 import { StyledP, PageTitle } from "../styles/global-styles"
 import SRLButton from "../components/lightbox-button"
@@ -92,15 +91,15 @@ const PhotographyPage = (props: PageProps, location) => {
     gutter: 10,
   }
 
-  const { openLightbox } = useLightbox()
   const options = {
     settings: {
-      overlayColor: "rgb(0, 0, 0)",
+      overlayColor: "rgb(255,255,255)",
       autoplaySpeed: 7000,
       transitionSpeed: 1000,
     },
     caption: {
       captionFontWeight: "300",
+      captionColor: "#000000"
     },
     buttons: {
       showDownloadButton: false,
