@@ -36,7 +36,7 @@ const Layout = ({ children, location }) => {
     secondaryRectColor: "#ffffff",
     primaryTextColor: "#ffffff",
     clickableColor: "#7a7cff",
-    secondaryTextColor: "#0026ca",
+    secondaryTextColor: "#ffffff",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
@@ -44,19 +44,19 @@ const Layout = ({ children, location }) => {
   const blackTheme = {
     primaryRectColor: "#212121",
     secondaryRectColor: "#ffffff",
-    primaryTextColor: "#484848",
-    clickableColor: "#484848",
-    secondaryTextColor: "#484848",
+    primaryTextColor: "#ffffff",
+    clickableColor: "#ffffff",
+    secondaryTextColor: "#ffffff",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
 
   const greenTheme = {
     primaryRectColor: "#66bb6a",
-    secondaryRectColor: "#ffffff",
+    secondaryRectColor: "#000000",
     primaryTextColor: "#000000",
     clickableColor: "#98ee99",
-    secondaryTextColor: "#338a3e",
+    secondaryTextColor: "#000000",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }
@@ -73,10 +73,10 @@ const Layout = ({ children, location }) => {
 
   const cobaltTheme = {
     primaryRectColor: "#7986cb",
-    secondaryRectColor: "#ffffff",
+    secondaryRectColor: "#000000",
     primaryTextColor: "#000000",
     clickableColor: "#aab6fe",
-    secondaryTextColor: "#49599a",
+    secondaryTextColor: "#000000",
     iconColor: "#000000",
     backgroundColor: "#ffffff",
   }

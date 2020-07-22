@@ -78,14 +78,20 @@ export const StyledP = styled.p`
 `
 
 export const Button = styled.button`
+
   cursor: pointer;
   font-style: italic;
   padding: 1rem;
   border: none;
   display: block;
-  width: 100%;
+  width: 50%;
   border-radius: 5px;
   background-color: ${props => props.theme.clickableColor};
+
+  @media only screen and (max-width: 950px) {
+    width: 100%;
+  }
+
 `
 
 export const PageTitle = styled.h1`

@@ -103,12 +103,8 @@ const PhotographyPage = (props: PageProps, location) => {
     },
     buttons: {
       showDownloadButton: false,
-      // showThumbnailsButton: false,
-      showFullscreenButton: false,
-    },
-    // thumbnails: {
-    //   showThumbnails: true,
-    // },
+      showFullscreenButton: false
+    }
   }
 
   const landscapeElements = landscapePhotos.map(

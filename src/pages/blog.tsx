@@ -27,7 +27,7 @@ const BlogPage = (props: PageProps) => {
     <Layout location={props.location}>
       <SEO title="Blog" description={"Web development tutorials, camera talk, and cycling stories."} />
       
-      <PageTitle>Tutorials and unsolicited opinions on a veriety of topics.</PageTitle>
+      <PageTitle>Tutorials and unsolicited opinions on a variety of topics.</PageTitle>
       
       {posts.map(({ node: post }, index) => {
         return (

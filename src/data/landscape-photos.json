@@ -6,6 +6,18 @@
     "imageURL": "../images/photos/landscapes/brewster_flats_swimmers.jpg"
   },
   {
+    "title": "Untitled",
+    "description": "Shot on Ilford PAN F Plus at Chapin Beach on Cape Cod.",
+    "format": "6x7 Film",
+    "imageURL": "../images/photos/landscapes/the_point.jpg"
+  },
+  {
+    "title": "The Singularity",
+    "description": "Taken in the streets of Cambridge, MA near MIT.",
+    "format": "Digital",
+    "imageURL": "../images/photos/landscapes/tech_square.jpg"
+  },
+  {
     "title": "Now Playing!",
     "description": "Shot on Kodak Portra 160 in Providence, RI.",
     "format": "6x7 Film",

@@ -1,6 +1,28 @@
 [
   {
-    "title": "Polaroid SX-70",
+    "title": "Instant Film from the Coast",
+    "description": "Black and white images captured with my Polaroid SX-70 on the Cape and Islands.",
+    "coverImageURL": "../images/photos/series/instant_coast/lighthouse.jpg",
+    "images": [
+      {
+        "title": "Hardings Beach",
+        "caption": "A private lighthouse located on a peninsula at Hardings Beach in Chatham, MA.",
+        "src": "../images/photos/series/instant_coast/hardings_beach.jpg"
+      },
+      {
+        "title": "Lighthouse",
+        "caption": "Sankaty Head Lighthouse.",
+        "src": "../images/photos/series/instant_coast/lighthouse.jpg"
+      },
+      {
+        "title": "Lighthouse",
+        "caption": "Scrub oak trees in the Middle Moors.",
+        "src": "../images/photos/series/instant_coast/nantucket_trees.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Instant Film Experiments",
     "description": "My first ever pack of instant film. The unpredictability was equal parts frustrating and exciting. Looking forward to the next one!",
     "coverImageURL": "../images/photos/series/polaroids/silo.jpg",
     "images": [

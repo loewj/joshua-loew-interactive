@@ -61,7 +61,6 @@ export const LandscapeWrapper = styled.div`
 `
 
 export const SeriesCard = styled.div`
-
   margin: 1rem;
   display: flex;
 
@@ -85,6 +84,7 @@ export const SeriesCard = styled.div`
 
   .left {
     flex: 1;
+    flex-grow: 2;
   }
 
   .right {
@@ -94,7 +94,6 @@ export const SeriesCard = styled.div`
   h1 {
     font-weight: 100;
   }
-
 `
 
 export const LandscapeCard = styled.div`
@@ -127,6 +126,7 @@ export const TileContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
   padding-top: 0.5rem;
   padding-left: 1rem;
