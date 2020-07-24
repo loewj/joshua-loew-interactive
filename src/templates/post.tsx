@@ -5,7 +5,11 @@ import Back from "../images/svg/icons/back.svg"
 import { BackButtonContainer } from "../styles/photography-styles"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
-import { BlogPhotoContainer, PostContainer, BackButton } from "../styles/blog-styles"
+import {
+  BlogPhotoContainer,
+  PostContainer,
+  BackButton,
+} from "../styles/blog-styles"
 import { motion } from "framer-motion"
 import SEO from "../components/seo"
 
@@ -26,12 +30,16 @@ const options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       if (node.data.target.fields) {
+        const fields = node.data.target.fields
         return (
           <BlogPhotoContainer>
-            <img
-              alt={node.data.target.fields.title["en-US"]}
-              src={node.data.target.fields.file["en-US"].url}
-            />
+            <img alt={fields.title["en-US"]} src={fields.file["en-US"].url} />
+            <div className={"caption"}>
+              <p>
+                <span className={"title"}>{fields.title["en-US"].toUpperCase()}</span>
+                <span> | {fields.description["en-US"]}</span>
+              </p>
+            </div>
           </BlogPhotoContainer>
         )
       }
@@ -52,9 +60,7 @@ const PostTemplate = ({ location, data }) => {
       <SEO title="Blog Post" description={description} />
       <BackButtonContainer>
         <Link to="/blog/" state={{ fromSeries: true }}>
-          <BackButton
-            whileHover={{ scale: 1.2 }}
-          >
+          <BackButton whileHover={{ scale: 1.2 }}>
             <Back width="30" />
           </BackButton>
         </Link>

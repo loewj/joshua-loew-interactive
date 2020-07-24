@@ -2,9 +2,12 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 export const BlogPhotoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
   img {
-    border: 5px solid #000;
-    border-radius: 5px;
+    /* border: 5px solid #000; */
+    border-radius: 3px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -16,6 +19,16 @@ export const BlogPhotoContainer = styled.div`
     }
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .caption {
+    text-align: center;
+    .title {
+      font-weight: bold;
+    }
+    p {
+      display: inline-block;
+    }
   }
 `
 
@@ -40,7 +53,7 @@ export const BlogCard = styled.div`
   }
 
   h1 {
-    font-family: "IBM Plex Sans Thin"
+    font-family: "IBM Plex Sans Thin";
   }
 
   @media only screen and (max-width: 600px) {
