@@ -1,5 +1,18 @@
 [
     {
+        "title": "NTT Disruption",
+        "description": "NTT Disruption, a unit within NTT, hired me to prototype a web-based sponsorship marketplace. The goal of the project is to modernize the pipeline connecting brands and property owners when making deals in the sports domain. I am currently working full-time on this project alongside other designers and engineers.",
+        "launchURL": "",
+        "tech": [
+            "Symfony",
+            "MySQL",
+            "Angular",
+            "Python"
+        ],
+        "where": "Freelance",
+        "when": "7/2020 – Present"
+    },
+    {
         "title": "Willie's Superbrew",
         "description": "Willie's Superbrew has a list of retail locations (bars and restaurants) where their product is sold. However, the address isn't sufficient to sustainably calculate distance between the consumer and nearby locations. To remedy this, I was hired to build a backend admin portal to geocode retail locations from a Google Sheet. The backend features API routes to return availability information to customers via ManyChat (a FaceBook messenger bot client). Finally, I built an Angular app that displays an interactive map and deployed it on the company's SquareSpace site.",
         "launchURL": "https://superbrew.com/locations-near-you",
